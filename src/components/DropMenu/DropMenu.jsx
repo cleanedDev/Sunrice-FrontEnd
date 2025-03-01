@@ -30,15 +30,15 @@ function DropMenu({ isOpen, handleToggle,setIsOpen, handleScrollSection }) {
           <ul className="flex flex-col gap-4 p-4 text-lg font-poppins font-bold text-white ">
             <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section1")}>Tours</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1">Nosotros</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section3")}>Nosotros</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1">Hospedaje</li>
+            <li className="hover:bg-gray-100 p-1 " onClick={() => handleScrollSection("section4")}>Hospedaje</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1">Transporte</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section5")}>Transporte</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1">Contacto</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section6")}>Contacto</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1">Reseñas</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section7")}>Reseñas</li>
             <hr/>
           </ul>
         </div>

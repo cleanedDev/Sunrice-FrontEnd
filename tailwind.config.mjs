@@ -8,6 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'sombra': '0px 15px 0px 0px rgba(0, 0, 0, 0.1)', // Clase personalizada
+        'sombra2': '0px 15px 0px 0px rgba(0, 0, 0, 0.25)', // Clase personalizada
+      },
+      
+      height: {
+        '110vh': '110vh',
+        '45':'45%',
+        '130vh': '130vh',
+      },
 
       backgroundImage: {
         'hero-bg': "url('/img/Dunas.jpg')", 
@@ -15,6 +25,9 @@ export default {
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
+      },
+      fontSize: {
+        '26px': '1.625rem', // 26px convertido a rem
       },
       colors: {
         'blueSunrise': '#C8D9E6',

@@ -28,13 +28,42 @@ function Carrucel(){
                         }
                       }}
                    
-                    className=" w-full sm:w-10/12 h-5/6 mt-5"
+                    className=" w-full sm:w-10/12 h-5/6 mt-5" aria-label="Carrusel de tours disponibles"
+                    // RECORDATORIO: poner alt a cada imagen
                     >
-                    <SwiperSlide className=""><CardTour className="my-auto" image='https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/manglares+y+dunas/md1.jpg'/></SwiperSlide>
-                    <SwiperSlide className=""><CardTour  image='https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales1.jpg'/></SwiperSlide>
-                    <SwiperSlide className=""><CardTour image='https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna1.jpg'/></SwiperSlide>
-                    <SwiperSlide className=""><CardTour image='https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/safari+marino/SF1.jpg'/></SwiperSlide>
-                    <SwiperSlide className=""><CardTour image='https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna1.jpg'/></SwiperSlide>
+                    <SwiperSlide className="">
+                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/manglares+y+dunas/md1.jpg'}
+                      tour={"Manglares y dunas"}
+                      />
+                    </SwiperSlide>
+
+                    <SwiperSlide className="">
+                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/safari+marino/SF6.jpg'}
+                      tour={"Experiencia Única en MagBay"}
+                      /></SwiperSlide>
+                    
+
+                    <SwiperSlide className="">
+                      <CardTour
+                     image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales1.jpg'}
+                     tour={"Avistamiento de ballenas"}
+                     />
+                     </SwiperSlide>
+
+                     
+                    <SwiperSlide className="">
+                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna1.jpg'}
+                       tour={"Avistamiento de FLora y Fauna"}
+                      />
+                      </SwiperSlide>
+                    
+                    <SwiperSlide className="">
+                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/safari+marino/SF9.jpg'}
+                      tour={"Safari al pacifico"}
+                      /></SwiperSlide>
+                    
+                    
+                    
                     </Swiper>
 
         

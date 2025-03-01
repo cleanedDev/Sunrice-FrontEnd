@@ -40,11 +40,11 @@ function Header() {
                 <nav className=" w-11/12 h-auto max-sm:hidden" role="navigation">
                     <ul className="flex justify-around font-poppins font-medium text-xl text-white ">
                         <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section1")}>Tours</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Nosotros</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Hospedaje</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Transporte</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Contacto</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Reseñas</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section3")} >Nosotros</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section4")}>Hospedaje</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section5")}>Transporte</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section6")}>Contacto</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section7")}>Reseñas</li>
                     </ul>
                 </nav>
                 <div className="sm:hidden " onClick={handleToggle}>
