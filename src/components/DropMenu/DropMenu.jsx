@@ -1,7 +1,8 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import {useTranslations} from 'next-intl';
 function DropMenu({ isOpen, handleToggle,setIsOpen, handleScrollSection }) {
 
+    const t = useTranslations('header');
 
     
     return (
@@ -28,17 +29,17 @@ function DropMenu({ isOpen, handleToggle,setIsOpen, handleScrollSection }) {
           </div>
           
           <ul className="flex flex-col gap-4 p-4 text-lg font-poppins font-bold text-white ">
-            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section1")}>Tours</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section1")}>{t('Tours')}</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section3")}>Nosotros</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section3")}>{t('Nosotros')}</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1 " onClick={() => handleScrollSection("section4")}>Hospedaje</li>
+            <li className="hover:bg-gray-100 p-1 " onClick={() => handleScrollSection("section4")}>{t('Hospedaje')}</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section5")}>Transporte</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section5")}>{t('Transporte')}</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section6")}>Contacto</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section6")}>{t('Contacto')}</li>
             <hr/>
-            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section7")}>Reseñas</li>
+            <li className="hover:bg-gray-100 p-1" onClick={() => handleScrollSection("section7")}>{t('Reseñas')}</li>
             <hr/>
           </ul>
         </div>

@@ -1,0 +1,72 @@
+{
+   "header": {
+    "Tours": "Tours",
+    "Nosotros": "About us",
+    "Hospedaje": "Accommodation",
+    "Transporte": "Transport",
+    "Contacto": "Contact",
+    "Reseñas": "Reviews"
+},
+"Section1": {
+    "title": "Explore MagBay: Unforgettable Tours",
+    "text": "Sail through mangroves, dunes, and spot spectacular wildlife.",
+    "carrucel": {
+        "Manglares y dunas": "Mangroves and dunes",
+        "Experiencia Única en MagBay": "Unique Experience in MagBay",
+        "Avistamiento de ballenas": "Whale Watching",
+        "Avistamiento de FLora y Fauna": "Flora and Fauna Watching",
+        "Safari al pacifico": "Pacific Safari"
+    }
+},
+"Section2": {
+    "title": "Challenges and Thrills in the Ocean",
+    "text": "Feel the power of the sea as you swim or challenge the great species.",
+    "cards": {
+        "Nado con marlin": "Swim with Marlin",
+        "Pesca InShore": "Inshore Fishing",
+        "Pesca OffShore": "Offshore Fishing"
+    }
+},
+"Section3": {
+    "title": "Commitment, Experience, and Accessibility",
+    "cards": {
+        "turismoTitle": "Safe and Certified Tourism",
+        "guiasTitle": "Expert Guides with Local Knowledge",
+        "inclusionTitle": "Experiences for Everyone",
+        "turismoText": "We have all the necessary permits and regulations required by the relevant authorities, ensuring a safe, reliable, and high-quality tourism and lodging service.",
+        "guiasText": "Our captains are natives of MagBay, experienced fishermen with deep knowledge of the local waters, guaranteeing an authentic and enriching tour.",
+        "inclusionText": "We strive to make our experiences accessible to everyone, including people with disabilities. If you require special assistance, please let us know when booking your tour so we can provide you with the best possible service."
+    }
+},
+"Section4": {
+    "title": "Comfortable Lodging for Your Adventure",
+    "text": "Rest after a day of adventure or enjoy MagBay at your own pace. At Hotel Prados, we offer comfort and hospitality for a pleasant and relaxing stay."
+},
+"Section5": {
+    "title": "Your Trip to MagBay, Hassle-Free",
+    "text": "Forget about the logistics—we take care of your transportation from the main arrival points in Baja California Sur, ensuring you reach Bahía Magdalena comfortably and worry-free."
+},
+"Section6": {
+    "title": "Contact Us and Start Your Adventure.",
+    "text": "We're here to help. Reach out to us via email, WhatsApp, or through our form—whichever works best for you.",
+    "ubicacionText": "Start your adventure! Click to be redirected."
+},
+"Section7": {
+    "title": "They've already experienced it, now it's your turn.",
+    "testimonios": {
+        "testimonio1": "An amazing experience! The service and treatment are excellent, 100% RECOMMENDABLE!",
+        "testimonio2": "An incredible experience, it exceeded my expectations. I will definitely do it again.",
+        "testimonio3": "From the very first moment, I felt like I was in another world. 100% recommended.",
+        "testimonio4": "If you're looking for something different and exciting, this is the perfect place. I loved it!",
+        "testimonio5": "I didnt know how much I needed this experience until I lived it. Unmissable!",
+        "testimonio6": "I lived unique and unforgettable moments. Thanks for this incredible experience.",
+        "testimonio7": "I never thought something could excite me so much. Without a doubt, I will do it again, a great experience to share with friends.",
+        "redes sociales":"Social Networks"
+    }
+}
+
+
+
+
+
+}

@@ -5,9 +5,13 @@ import { Navigation, Autoplay} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import CardRese from "../CardRese/CardRese";
+import { useTranslations } from "next-intl";
 
 
 function CarrucelRese(){
+
+ const t = useTranslations('Section7.testimonios')
+
     return(
         <>
 
@@ -36,15 +40,15 @@ function CarrucelRese(){
                     <SwiperSlide >
                        <CardRese bg={"bg-[#66C2FF]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(1).jpg"}
-                        namePerson={"Alejandra navarro"}
-                        testimonio={"Una gran experiencia! La atención y el trato es excelente  100% RECOMENDABLE!"}/>
+                        namePerson={"Monserrat navarro"}
+                        testimonio={t('testimonio1')}/>
                     </SwiperSlide>
 
                     <SwiperSlide >
                        <CardRese bg={"bg-[#33B3FF]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(10).jpg"}
                         namePerson={"Mariana López"}
-                        testimonio={"Una experiencia increíble, superó mis expectativas. Definitivamente lo volveré a vivir."}/>
+                        testimonio={t('testimonio2')}/>
                     </SwiperSlide>
                     
 
@@ -52,7 +56,7 @@ function CarrucelRese(){
                        <CardRese bg={"bg-[#1AA7FF]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(8).jpg"}
                         namePerson={"Carlos Méndez"}
-                        testimonio={"Desde el primer momento me sentí en otro mundo. 100% recomendado."}/>
+                        testimonio={t('testimonio3')}/>
                     </SwiperSlide>
                     
 
@@ -60,7 +64,7 @@ function CarrucelRese(){
                        <CardRese bg={"bg-[#0088E6]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(9).jpg"}
                         namePerson={"José Fernández"}
-                        testimonio={"Si buscas algo diferente y emocionante, este es el lugar perfecto. ¡Me encantó!"}/>
+                        testimonio={t('testimonio4')}/>
                     </SwiperSlide>
                     
 
@@ -68,7 +72,7 @@ function CarrucelRese(){
                        <CardRese bg={"bg-[#005599]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(5).jpg"}
                         namePerson={"Andrea Ramírez"}
-                        testimonio={"No sabía cuánto necesitaba esta experiencia hasta que la viví. ¡Imperdible!"}/>
+                        testimonio={t('testimonio5')}/>
                     </SwiperSlide>
                     
 
@@ -76,14 +80,14 @@ function CarrucelRese(){
                        <CardRese bg={"bg-[#004480]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(7).jpg"}
                         namePerson={"Isabela Núñez"}
-                        testimonio={"Viví momentos únicos e irrepetibles. Gracias por esta experiencia increíble."}/>
+                        testimonio={t('testimonio6')}/>
                     </SwiperSlide>
 
                     <SwiperSlide >
                        <CardRese bg={"bg-[#0099FF]"}
                         photo={"https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Comments/User+(4).jpg"}
                         namePerson={"Alberto Morales"}
-                        testimonio={"No pensé que algo pudiera emocionarme tanto. Sin duda, lo haré de nuevo, experiencia para compartir con amigos."}/>
+                        testimonio={t('testimonio7')}/>
                     </SwiperSlide>
                     
 

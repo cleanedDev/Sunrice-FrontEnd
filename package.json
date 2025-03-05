@@ -22,6 +22,8 @@
 
     "next": "15.1.6",
 
+    "next-intl": "^3.26.5",
+
     "react": "^19.0.0",
 
     "react-alice-carousel": "^2.9.1",

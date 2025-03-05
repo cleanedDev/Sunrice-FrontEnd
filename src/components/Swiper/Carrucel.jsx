@@ -2,12 +2,14 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import {useTranslations} from 'next-intl';
 import CardTour from "../CardTours/CardTours";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 function Carrucel(){
+  const t = useTranslations('Section1.carrucel');
     return(
         <>
         <Swiper
@@ -33,33 +35,33 @@ function Carrucel(){
                     >
                     <SwiperSlide className="">
                       <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/manglares+y+dunas/md1.jpg'}
-                      tour={"Manglares y dunas"}
+                      tour={t('Manglares y dunas')}
                       />
                     </SwiperSlide>
 
                     <SwiperSlide className="">
                       <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/safari+marino/SF6.jpg'}
-                      tour={"Experiencia Única en MagBay"}
+                      tour={t('Experiencia Única en MagBay')}
                       /></SwiperSlide>
                     
 
                     <SwiperSlide className="">
                       <CardTour
                      image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales1.jpg'}
-                     tour={"Avistamiento de ballenas"}
+                     tour={t('Avistamiento de ballenas')}
                      />
                      </SwiperSlide>
 
                      
                     <SwiperSlide className="">
                       <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna1.jpg'}
-                       tour={"Avistamiento de FLora y Fauna"}
+                       tour={t('Avistamiento de FLora y Fauna')}
                       />
                       </SwiperSlide>
                     
                     <SwiperSlide className="">
                       <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/safari+marino/SF9.jpg'}
-                      tour={"Safari al pacifico"}
+                      tour={t('Safari al pacifico')}
                       /></SwiperSlide>
                     
                     

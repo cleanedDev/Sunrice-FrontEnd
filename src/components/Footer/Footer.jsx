@@ -1,11 +1,22 @@
+'use client'
 import React from "react";
 import { IoMdPin } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import {useTranslations} from 'next-intl';
 
 function Footer(){
+    const t = useTranslations('header');
+      const tr = useTranslations('Section7.testimonios');
+
+    const handleScrollSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      };
     return(
         <>
         <footer className="bg-[#0A142F] w-full lg:h-[40vh] flex flex-col justify-around h-[48vh] max-sm:text-sm">
@@ -19,7 +30,7 @@ function Footer(){
                         <span className="flex text-white gap-2  items-center"><MdEmail className=" w-[20px] h-[20px]" />BarracudAdventure.BCS@gmail.com</span>
                     </div>
                     <div className="w-full h-full flex gap-4  ">
-                        <span className="flex text-white gap-2">Redes sociales</span>
+                        <span className="flex text-white gap-2">{tr('redes sociales')}</span>
                         <div className="flex text-white gap-4">
                             <a href="https://www.facebook.com/Barracuda.Adventure/" target="_blank"><FaFacebook className=" w-[20px] h-[20px]" /></a>
                             <a href=""><FaInstagram className=" w-[20px] h-[20px]" target="_blank"/></a>
@@ -32,12 +43,12 @@ function Footer(){
             <div className="flex items-center">
                 <nav className="w-5/12 h-auto hidden lg:block mx-auto" role="navigation">
                     <ul className="flex justify-around font-poppins font-medium text-xl text-white ">
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Tours</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer"  >Nosotros</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Hospedaje</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Transporte</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Contacto</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Reseñas</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section1")} >{t('Tours')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section3")}  >{t('Nosotros')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section4")} >{t('Hospedaje')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section5")} >{t('Transporte')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section6")} >{t('Contacto')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section7")} >{t('Reseñas')}</li>
                     </ul>
                 </nav>
                 <p className="mx-auto text-[#FFFFFF] text-center">Copyright © 2025 • Sunrise Adventure In MagBay</p>

@@ -1,16 +1,19 @@
 import React from "react";
 import CardFishing from "../CardFishing";
+import {useTranslations} from 'next-intl';
 
 function Section2(){
+    const t = useTranslations('Section2');
+    const tc = useTranslations('Section2.cards');
     return(
         <>
         <section className="lg:max-w-screen-xl mx-auto w-full h-[140vh]   my-8 overflow-hidden max-sm:h-[160vh] ">
             <div  className="bg-sectionBG/60 w-full sm:w-11/12 h-[97%] mx-auto flex flex-col  shadow-sombra rounded-2xl ">
             
                 <div className="w-full mx-auto text-center p-1 mt-4  ">
-                    <h2 className="text-[2.5rem] font-bold text-blueText">Retos y Emociones en el Océano</h2>
+                    <h2 className="text-[2.5rem] font-bold text-blueText">{t('title')}</h2>
                     <p className="text-[1.75rem] font-normal text-blueSubtitles">
-                        "Siente la fuerza del mar mientras nadas o desafías a las grandes especies."
+                        {t('text')}
                     </p>
                 </div>
                     
@@ -30,14 +33,14 @@ function Section2(){
                             </div>
 
                             <div className="absolute flex flex-col items-center justify-center ">
-                                <h2 className="text-4xl font-bold text-white text-center">Nado con marlin</h2>
+                                <h2 className="text-4xl font-bold text-white text-center">{tc('Nado con marlin')}</h2>
                             </div>
                         </div>
 
                         <div className="w-11/12 sm:h-[35%] mx-auto  flex max-sm:flex-col justify-between items-center h-[45%] rounded-2xl ">
                             
-                            <CardFishing fishing={' Pesca InShore'} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/pesca+inshore/FishingInShore2.jpg'}/>
-                            <CardFishing fishing={' Pesca OffShore'} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
+                            <CardFishing fishing={tc('Pesca InShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/pesca+inshore/FishingInShore2.jpg'}/>
+                            <CardFishing fishing={tc('Pesca OffShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
                             
                         </div>
 
