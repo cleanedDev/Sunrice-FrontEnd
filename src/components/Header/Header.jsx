@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
+import {useTranslations} from 'next-intl';
 import { useState, useEffect } from "react";
 
 import DropMenu from "../DropMenu/DropMenu";
 
 function Header() {
+  const t = useTranslations('header');
 
     const [scrolled, setScrolled] = useState(false); //state para controlar blur de header
     const [isOpen, setIsOpen] = useState(false);//state para controlar meu hamburguesa
@@ -39,12 +41,12 @@ function Header() {
                 </div>
                 <nav className=" w-11/12 h-auto max-sm:hidden" role="navigation">
                     <ul className="flex justify-around font-poppins font-medium text-xl text-white ">
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section1")}>Tours</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" >Nosotros</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Hospedaje</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Transporte</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Contacto</li>
-                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer">Reseñas</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section1")}>{t('Tours')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section3")} >{t('Nosotros')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section4")}>{t('Hospedaje')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section5")}>{t('Transporte')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section6")}>{t('Contacto')}</li>
+                        <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section7")}>{t('Reseñas')}</li>
                     </ul>
                 </nav>
                 <div className="sm:hidden " onClick={handleToggle}>

@@ -1,0 +1,69 @@
+{
+    "header":{
+        "Tours":"Tours",
+        "Nosotros":" Nosotros",
+        "Hospedaje":"Hospedaje",
+        "Transporte":"Transporte",
+        "Contacto":"Contacto",
+        "Reseñas":"Reseñas"
+    },
+    "Section1":{
+        "title":"Explora Bahía Magdalena: Tours Inolvidables",
+        "text":"Navega entre manglares, dunas y avista fauna espectacular.",
+        "carrucel":{
+            "Manglares y dunas":"Manglares y dunas",
+            "Experiencia Única en MagBay":"Experiencia Única en MagBay",
+            "Avistamiento de ballenas":"Avistamiento de ballenas",
+            "Avistamiento de FLora y Fauna":"Avistamiento de FLora y Fauna",
+            "Safari al pacifico":"Safari al pacifico"
+        }
+    },
+    "Section2":{
+        "title":"Retos y Emociones en el Océano",
+        "text":"Siente la fuerza del mar mientras nadas o desafías a las grandes especies.",
+        "cards":{
+            "Nado con marlin":"Nado con marlin",
+            "Pesca InShore":"Pesca InShore",
+            "Pesca OffShore":"Pesca OffShore"
+        }
+    },
+    "Section3":{
+        "title":"Compromiso, Experiencia y Accesibilidad",
+        "cards":{
+            "turismoTitle":"Turismo Seguro y Certificado",
+            "guiasTitle":"Guías Expertos y Conocedores de la Región",
+            "inclusionTitle":"Experiencias para Todos",
+            "turismoText":"Contamos con todos los permisos y regulaciones exigidos por las autoridades correspondientes, garantizando un servicio turístico y de hospedaje seguro, confiable y de calidad.",
+            "guiasText":"Nuestros capitanes son nativos de Bahía Magdalena, pescadores con años de experiencia y profundo conocimiento de las aguas locales, asegurando un recorrido auténtico y enriquecedor.",
+            "inclusionText":"Nos esforzamos por hacer que nuestras experiencias sean accesibles para todos, incluyendo personas con discapacidad. En caso de requerir asistencia especial, por favor háznoslo saber al momento de reservar tu tour para brindarte el mejor servicio posible."
+        }
+    },
+    "Section4":{
+        "title":"Hospedaje Cómodo para tu Aventura",
+        "text":"Descansa después de un día de aventura o disfruta de Bahía Magdalena a tu ritmo. En Hotel Prados, te ofrecemos comodidad y hospitalidad para una estancia placentera y relajante."
+    },
+    "Section5":{
+        "title":"Tu viaje a MagBay, sin complicaciones",
+        "text":"Olvídate de la logística, nosotros nos encargamos de tu transporte desde los principales puntos de llegada a Baja California Sur para que llegues cómodo y sin preocupaciones a Bahía Magdalena."
+    },
+    "Section6":{
+        "title":"Contáctanos y comienza tu aventura.",
+        "text":"Estamos aquí para ayudarte. Contáctanos por correo, WhatsApp,  o a través de nuestro formulario, como mejor te convenga.",
+        "ubicacionText":"Comienza tu aventura! Al hacer clic, serás redirigido."
+    },
+    "Section7": {
+    "title": "Ellos ya vivieron la experiencia, ahora te toca a ti.",
+    "testimonios": {
+        "testimonio1": "Una gran experiencia! La atención y el trato es excelente 100% RECOMENDABLE!",
+        "testimonio2": "Una experiencia increíble, superó mis expectativas. Definitivamente lo volveré a vivir.",
+        "testimonio3": "Desde el primer momento me sentí en otro mundo. 100% recomendado.",
+        "testimonio4": "Si buscas algo diferente y emocionante, este es el lugar perfecto. ¡Me encantó!",
+        "testimonio5": "No sabía cuánto necesitaba esta experiencia hasta que la viví. ¡Imperdible!",
+        "testimonio6": "Viví momentos únicos e irrepetibles. Gracias por esta experiencia increíble.",
+        "testimonio7": "No pensé que algo pudiera emocionarme tanto. Sin duda, lo haré de nuevo, experiencia para compartir con amigos.",
+        "redes sociales":"Redes sociales"
+    }
+}
+
+}
+
