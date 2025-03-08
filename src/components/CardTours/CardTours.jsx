@@ -1,6 +1,8 @@
+
+import Link from "next/link";
 import React from "react";
 
-function CardTour ({image, tour}){
+function CardTour ({image, tour,handleClick}){
 
     return(
         <>
@@ -12,7 +14,9 @@ function CardTour ({image, tour}){
                 />
                 <div className="absolute  w-11/12 h-2/6  flex flex-col items-center justify-around mb-12  gap-3">
                     <h2 className="text-4xl font-bold text-white text-center ">{tour}</h2>
-                    <a className="p-2 w-8/12 rounded-2xl text-center font-bold text-xl text-white duration-300 delay-300 bg-blueHover hover:bg-blueHover/50  "  href="">Explorar tour</a>
+                    
+                        <button className="p-2 w-8/12 rounded-2xl text-center font-bold text-xl text-white duration-300 delay-300 bg-blueHover hover:bg-blueHover/50" onClick={handleClick}>Explorar tour</button>
+                    
                 </div>
             </article>
 

@@ -21,7 +21,8 @@ export default {
 
       backgroundImage: {
         'hero-bg': "url('/img/Dunas.jpg')", 
-        'bgTestImage': "url('https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales1.jpg')"
+        'bgTestImage': "url('https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales1.jpg')",
+        'bgFormContact': "url('https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales2.jpg')"
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],

@@ -1,9 +1,13 @@
 import React from "react";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+
+import Link from "next/link";
 
 function Section6({id}){
 
     const t = useTranslations("Section6")
+    const locale = useLocale(); //saber idioma actual de next-intl
     return(
         <>
             <section id={id} className=" lg:max-w-screen-xl mx-auto w-full min-h-[60vh]   mt-5  max-sm:h-auto">
@@ -38,7 +42,9 @@ function Section6({id}){
                             <img src="/whatsapp.png" alt="WhatsApp sunrise adventure in MagBay" className="w-full h-full hover:scale-105" />
                         </a>
 
-                        <img src="/formulario.png" alt="" className="hover:scale-110" />
+                        {/* <img src="/formulario.png" alt="" className="hover:scale-110" /> */}
+                        <Link href={`/${locale}/contact`} ><img src="/formulario.png" alt="" className="hover:scale-110" /></Link>
+                      
                     </div>
                     <p className="text-lg md:text-xl text-blueSubtitles  mt-2 text-center ">{t('text')} </p>
                 </div>

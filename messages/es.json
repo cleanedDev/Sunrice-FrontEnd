@@ -62,8 +62,20 @@
         "testimonio6": "Viví momentos únicos e irrepetibles. Gracias por esta experiencia increíble.",
         "testimonio7": "No pensé que algo pudiera emocionarme tanto. Sin duda, lo haré de nuevo, experiencia para compartir con amigos.",
         "redes sociales":"Redes sociales"
+        }
+    },
+    "formContact":{
+        "title":"Contáctate con nosotros",
+        "text":" Tu opinión y preguntas son importantes para nosotros. Escríbenos y te responderemos pronto.",
+        "inputs":{
+            "nombre":"Nombre",
+            "celular":"Celular",
+            "correo":"Correo electronico",
+            "mensaje":"Escribe aqui tu mensaje..."
+        },
+        "alert":"Este campo es requerido",
+        "valueButton":"Enviar"
     }
-}
 
 }
 
