@@ -62,7 +62,19 @@
         "testimonio6": "I lived unique and unforgettable moments. Thanks for this incredible experience.",
         "testimonio7": "I never thought something could excite me so much. Without a doubt, I will do it again, a great experience to share with friends.",
         "redes sociales":"Social Networks"
-    }
+        }
+    },
+    "formContact": {
+    "title": "Get in touch with us",
+    "text": "Your opinions and questions are important to us. Write to us, and we will respond soon.",
+    "inputs": {
+        "nombre": "Name",
+        "celular": "Phone",
+        "correo": "Email",
+        "mensaje": "Write your message here..."
+    },
+    "alert": "This field is required",
+    "valueButton": "Send"
 }
 
 

@@ -7,9 +7,15 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import {useTranslations} from 'next-intl';
 
+import { usePathname } from "next/navigation";
+
+
 function Footer(){
+    const pathname = usePathname(); //constante para acceder al path (url)
+    
+
     const t = useTranslations('header');
-      const tr = useTranslations('Section7.testimonios');
+    const tr = useTranslations('Section7.testimonios');
 
     const handleScrollSection = (sectionId) => {
         const section = document.getElementById(sectionId);
@@ -17,6 +23,8 @@ function Footer(){
           section.scrollIntoView({ behavior: "smooth" });
         }
       };
+
+    
     return(
         <>
         <footer className="bg-[#0A142F] w-full lg:h-[40vh] flex flex-col justify-around h-[48vh] max-sm:text-sm">
@@ -41,6 +49,8 @@ function Footer(){
                 </div>
             </div>
             <div className="flex items-center">
+               
+            {(pathname === `/en` || pathname === `/es`) && (
                 <nav className="w-5/12 h-auto hidden lg:block mx-auto" role="navigation">
                     <ul className="flex justify-around font-poppins font-medium text-xl text-white ">
                         <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section1")} >{t('Tours')}</li>
@@ -51,6 +61,8 @@ function Footer(){
                         <li className="hover:bg-blueText p-2 rounded-md cursor-pointer" onClick={() => handleScrollSection("section7")} >{t('Reseñas')}</li>
                     </ul>
                 </nav>
+            )}
+            
                 <p className="mx-auto text-[#FFFFFF] text-center">Copyright © 2025 • Sunrise Adventure In MagBay</p>
             </div>
            
@@ -58,7 +70,7 @@ function Footer(){
             <div className="bg-black w-full h-[15%]">
                 <img src="/SitioCleaned.png" alt="" className="h-full mx-auto w-auto object-contain " />
             </div>
-            {/* <p className="mx-auto text-[#FFFFFF]">Copyright © 2025 • Sunrise Adventure In MagBay</p> */}
+           
         </footer>
         </>
     )
