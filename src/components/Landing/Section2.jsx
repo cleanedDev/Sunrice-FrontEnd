@@ -1,10 +1,22 @@
+'use client';
 import React from "react";
 import CardFishing from "../CardFishing";
 import {useTranslations} from 'next-intl';
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 function Section2(){
     const t = useTranslations('Section2');
     const tc = useTranslations('Section2.cards');
+
+     const router = useRouter();
+      const locale = useLocale(); 
+
+    const handleClick = (id) => {  //handler para redirigir a tour detallado
+        // 
+        router.push(`${locale}/tour/${id}`);
+       
+      };
     return(
         <>
         <section className="lg:max-w-screen-xl mx-auto w-full h-[140vh]   my-8 overflow-hidden max-sm:h-[160vh] ">
@@ -27,7 +39,7 @@ function Section2(){
                             />
                             
                             <div className="absolute inset-0 bg-black/30 opacity-0 flex justify-center items-end group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
-                                <button className="mb-9 px-6 py-2 bg-blueHover text-white font-font-poppins font-semibold rounded-lg shadow-md hover:bg-blueHover/50">
+                                <button onClick={() => handleClick(process.env.NEXT_PUBLIC_ID_TOUR6)} className="mb-9 px-6 py-2 bg-blueHover text-white font-font-poppins font-semibold rounded-lg shadow-md hover:bg-blueHover/50">
                                     Conocer más
                                 </button>
                             </div>
@@ -39,8 +51,8 @@ function Section2(){
 
                         <div className="w-11/12 sm:h-[35%] mx-auto  flex max-sm:flex-col justify-between items-center h-[45%] rounded-2xl ">
                             
-                            <CardFishing fishing={tc('Pesca InShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/pesca+inshore/FishingInShore2.jpg'}/>
-                            <CardFishing fishing={tc('Pesca OffShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
+                            <CardFishing handleClick={handleClick} id={process.env.NEXT_PUBLIC_ID_TOUR7} fishing={tc('Pesca InShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/pesca+inshore/FishingInShore2.jpg'}/>
+                            <CardFishing handleClick={handleClick} id={process.env.NEXT_PUBLIC_ID_TOUR7} fishing={tc('Pesca OffShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
                             
                         </div>
 

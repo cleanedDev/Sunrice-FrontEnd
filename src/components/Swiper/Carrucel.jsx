@@ -70,7 +70,7 @@ function Carrucel(){
 
                      
                     <SwiperSlide className="">
-                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna1.jpg'}
+                      <CardTour image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/flora+y+fauna/FloraFauna9.jpg'}
                        tour={t('Avistamiento de FLora y Fauna')}
                        handleClick={() => handleClick(process.env.NEXT_PUBLIC_ID_TOUR4)}
                       />

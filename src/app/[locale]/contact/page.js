@@ -2,7 +2,7 @@
 import React from "react";
 import {useTranslations} from 'next-intl';
 import { useForm } from "react-hook-form"
-import {enviarFormularioContact} from  "../../../api/admin/routes"
+import {enviarFormularioContact} from  "../../../api/fetch/routes"
 
 function Contact(){
 
@@ -19,8 +19,8 @@ const { register, handleSubmit, reset, watch, formState: { errors },} = useForm(
     return(
         <>
     
-        <div className="w-full h-[120vh] lg:h-screen flex items-center justify-center mt-[6rem] px-4 lg:max-w-screen-xl ">
-            <div className="w-6/12 max-md:w-10/12 max-sm:w-11/12 h-[80%] relative flex flex-col items-center ">
+        <div className="w-full h-[120vh] lg:h-screen  mt-[6rem] flex items-center lg:max-w-screen-xl  mx-auto">
+            <div className="w-6/12 max-md:w-10/12 max-sm:w-11/12 h-[80%] relative flex flex-col items-center mx-auto">
 
                 <img src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/avistamiento+ballenas/whales2.jpg"
                 className="w-full h-full object-cover rounded-2xl"
@@ -43,7 +43,7 @@ const { register, handleSubmit, reset, watch, formState: { errors },} = useForm(
                                 <input className="w-full bg-white p-4 rounded-md" placeholder={t("inputs.nombre")}
                                 {...register("nombre",{ required: true, maxLength: 30 })}
                                 />
-                                {errors.Nombre?.type === "required" && ( <p className="text-red-500" role="alert">{t("alert")}</p>)}
+                                {errors.nombre?.type === "required" && ( <p className="text-red-500" role="alert">{t("alert")}</p>)}
                             </div>
 
                             <div className="w-full ">

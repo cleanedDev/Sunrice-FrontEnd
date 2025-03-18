@@ -75,7 +75,57 @@
     },
     "alert": "This field is required",
     "valueButton": "Send"
+},
+"tourPage": {
+    "containerToursInfo": {
+        "temporada": "Season",
+        "duracion": "Duration",
+        "reservar": "Book here",
+        "incluye": "This Tour includes:"
+
+    }
+},
+"tourReservation": {
+    "title": "Your next adventure begins here",
+    "campo obligatorio": "This field is required",
+    "fechaFinMsg": "The end date must be the same as or later than the start date",
+    "correoAlert": "We need your email",
+    "agregarHotel": "Do you want to add accommodation to your adventure?",
+    "viajeros": "Number of travelers",
+    "extras":"Your requests, our mission",
+    "extrasPesca": "Fishing technique and additional requirements",
+    "nombre":"Full Name",
+    "celular":"Cell phone number",
+    "metodoContacto": "What is your preferred contact method?",
+    "inicioTravesia": "Journey Start",
+    "finalTravesia": "Journey End",
+    "checkIn": "Check-In",
+    "checkOut": "Check-Out",
+    "huespedes":"Guests",
+    "peticion":"For my adventure, I would like...",
+    "peticion2":"Example: Fly fishing, also need...",
+    "correoElectronico":"Enter your email address",
+    "buttonAgregar": "Add", 
+    "buttonQuitar": "Remove",
+    "selecciona": "Select an option",
+    "CorreoOption":"Email",
+    "reservarAhora":"Make Reservation"
+},
+"hotel": {
+    "subtitle": "Experience unique comfort and elegance, surrounded by tranquility and warmth.",
+    "habitaciones": "Our Rooms",
+    "instalaciones": "Our Facilities",
+    "estancia": "Ready to enjoy an unforgettable stay?",
+    "buttonReservar": "Book Your Stay Now",
+    "terraza":"Terrace",
+    "comedor":"Dining Area",
+    "estacionamiento":"Monitored Parking",
+    "cocina":"Shared Kitchen",
+    "titleForm": "Your Perfect Getaway Starts Here!"
+
+    
 }
+
 
 
 
