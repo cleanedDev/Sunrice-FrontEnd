@@ -75,7 +75,59 @@
         },
         "alert":"Este campo es requerido",
         "valueButton":"Enviar"
-    }
+    },
+    "tourPage":{
+        "containerToursInfo":{
+            "temporada":"Temporada",
+            "duracion":"Duracion",
+            "reservar":"Reservar aqui",
+            "incluye":"Este Tour incluye:"
+
+        }
+    },
+    "tourReservation":{
+        "title":"Tu próxima aventura comienza aquí",
+        "campo obligatorio":"Este campo es obligatorio",
+        "fechaFinMsg":"La fecha de fin debe ser igual o posterior a la de inicio",
+        "correoAlert":"Necesitamos tu correo electronico",
+        "agregarHotel":"¿Quieres agregar hospedaje a tu aventura?",
+        "viajeros": "Cantidad de viajeros",
+        "extras":"Tus peticiones, nuestra misión",
+        "extrasPesca":"Técnica de pesca y requerimientos adicionales",
+        "nombre":"Nombre completo",
+        "celular":"Celular",
+        "metodoContacto":"¿Cuál es tu método de contacto preferido?",
+        "inicioTravesia":"Inicio travesia",
+        "finalTravesia":"Final travesia",
+        "checkIn":"Check-In",
+        "checkOut":"Check-Out",
+        "huespedes":"Huespedes",
+        "peticion":"Necesito para mi aventura...",
+        "peticion2":"Ejemplo : Pesca con mosca, además necesito...", 
+        "correoElectronico":"Ingresa tu correo electronico",
+        "buttonAgregar":"Agregar",
+        "buttonQuitar":"Remover",
+        "selecciona":"Selecciona una opción",
+        "CorreoOption":"Correo electronico",
+        "reservarAhora":"Crear reservación"
+
+    },
+    "hotel":{
+    "subtitle":"Vive una experiencia de confort y elegancia única, rodeado de tranquilidad y calidez.",
+    "habitaciones":"Nuestras habitaciones",
+    "instalaciones":"Nuestras Instalaciones",
+    "estancia":"¿Listo para disfrutar de una estancia inolvidable?",
+    "buttonReservar":"Reserva tu estancia ahora",
+    "terraza": "Terraza",
+    "comedor": "Área de comedor",
+    "estacionamiento": "Estacionamiento monitoreado",
+    "cocina": "Cocina compartida",
+
+    "titleForm":"¡Tu Escapada Perfecta Comienza Aquí!"
+
+}
+   
+
 
 }
 

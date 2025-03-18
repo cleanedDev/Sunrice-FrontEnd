@@ -50,7 +50,7 @@ function Header() {
     return (
         <>
        
-          <header className={`w-full h-20 mx-auto sticky top-0 z-50 pt-2 box-border transition-all duration-400 max-sm:h-24 ${pathname === `/${idioma}/contact` ? "bg-blue-500 shadow-md" : scrolled ? "bg-blue-500/55 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
+          <header className={`w-full h-20 mx-auto sticky top-0 z-50 pt-2 box-border transition-all duration-400 max-sm:h-24 ${pathname !== `/${idioma}` ? "bg-blue-500 shadow-md" : scrolled ? "bg-blue-500/55 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
               <div className=" flex items-center mx-auto w-full h-full lg:max-w-screen-xl max-sm:justify-between  ">
 
                 <div className="w-1/12 h-auto max-sm:w-3/12 cursor-pointer">

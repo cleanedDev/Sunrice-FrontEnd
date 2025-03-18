@@ -6,7 +6,7 @@ function Section3({id}){
    const t = useTranslations('Section3');
     return(
         <>
-        <section id={id} className=" lg:max-w-screen-xl mx-auto w-full min-h-screen h-screen flex items-center  mt-10 max-md:h-[150vh] max-sm:h-[240vh]" >
+        <section id={id} className=" lg:max-w-screen-xl mx-auto w-full min-h-screen h-screen flex items-center   max-md:h-[150vh] max-sm:h-[240vh]" >
                 <div className=" bg-sectionBG w-full h-full mx-auto shadow-sombra rounded-2xl sm:w-11/12  ">
 
                     <header className="w-full mx-auto text-center p-1 mt-4  ">

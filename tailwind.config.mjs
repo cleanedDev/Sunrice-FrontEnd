@@ -37,6 +37,12 @@ export default {
         'blueDrop':"#2F4156",
         'blueHover':'#1601F8',
         'sectionBG': "#F5EFEB",
+        hotel: {
+          darkBlue: '#2F4156',
+          grayBlue: '#567C8D',
+          lightBlue: '#C8D9E6',
+          beige: '#F5EFEB',
+        },
         
 
             background: 
