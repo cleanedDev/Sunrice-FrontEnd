@@ -20,7 +20,7 @@ export const enviarFormularioContact = async (data) => {
 
 
       let loadingToast = Swal.fire({
-        title: "Actualizando perfil...",
+        title: "Enviando mensaje...",
         didOpen: () => {
           Swal.showLoading();
         },
