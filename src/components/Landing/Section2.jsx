@@ -52,7 +52,7 @@ function Section2(){
                         <div className="w-11/12 sm:h-[35%] mx-auto  flex max-sm:flex-col justify-between items-center h-[45%] rounded-2xl ">
                             
                             <CardFishing handleClick={handleClick} id={process.env.NEXT_PUBLIC_ID_TOUR7} fishing={tc('Pesca InShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/pesca+inshore/FishingInShore2.jpg'}/>
-                            <CardFishing handleClick={handleClick} id={process.env.NEXT_PUBLIC_ID_TOUR7} fishing={tc('Pesca OffShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
+                            <CardFishing handleClick={handleClick} id={process.env.NEXT_PUBLIC_ID_TOUR8} fishing={tc('Pesca OffShore')} image={'https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Pesca+Offshore/FishingOffshore2.jpg'}/>
                             
                         </div>
 
