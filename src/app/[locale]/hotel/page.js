@@ -42,12 +42,12 @@ function Hotel(){
                showDenyButton: true,
                showCancelButton: false,
                confirmButtonText: newData?.idioma === "es"? "Si, enviar." : "Yes, send." ,
-               denyButtonText: newData?.idioma === "es"? `Corroborar informacion` : "Verify information",
+               denyButtonText: newData?.idioma === "es"? `Revisar formulario` : "Verify information",
              }).then(async (result) => {
                
                if (result.isConfirmed) {
                 
-                 await reservationHotel(newData);
+                 await reservationHotel(newData, locale);
                 //  Swal.fire(newData?.idioma === "es"? ("Reserva enviada con exito!", "Enviamos los detalles de reservacion a tu correo electronico", "success") : ("Reservation successfully sent!", "We have sent the reservation details to your email", "success")); 
                 Swal.fire({
                   title: newData?.idioma === "es" ? "Reserva enviada con éxito!" : "Reservation successfully sent!",
@@ -55,6 +55,7 @@ function Hotel(){
                   icon: "success"
                 });
                  reset()  
+                 setOpenForm(false)
                 
                } else if (result.isDenied) {
                  
@@ -67,7 +68,7 @@ function Hotel(){
     return(
         <>
            
-    <div className="w-full min-h-screen relative mt-[6rem]  lg:max-w-screen-xl flex flex-col  mx-auto ">
+    <main className="w-full min-h-screen relative mt-[6rem]  lg:max-w-screen-xl flex flex-col  mx-auto ">
 
             <header className="relative h-[70vh] overflow-hidden">
                 <img 
@@ -218,7 +219,7 @@ function Hotel(){
       
 
 
-    </div>
+    </main>
         </>
     )
    

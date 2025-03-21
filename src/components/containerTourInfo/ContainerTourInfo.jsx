@@ -22,11 +22,11 @@ function ContainerTourInfo({dataTour,id}){
 
     return(
         <>
-         <div className="w-11/12 lg:w-9/12 h-auto flex flex-col sm:flex-row items-center justify-around  mx-auto  bg-gradient-to-br from-[#004AAD] via-[#63a4cd] to-[#158fe7] rounded-xl ">
+         <section className="w-11/12 lg:w-9/12 h-auto flex flex-col sm:flex-row items-center justify-around  mx-auto  bg-gradient-to-br from-[#004AAD] via-[#63a4cd] to-[#158fe7] rounded-xl " aria-labelledby="tour-details">
                       <div className="w-[95%] lg:w-[48%] h-[95%]  flex flex-col justify-around items-center gap-3 max-sm:h-[45%]">
                         <div className="w-[95%] h-[60%]  p-3">
                             {dataTour?.images?.length > 0 &&(
-                                      <img src={dataTour.images[6]} alt="Tour image" className="w-full h-full object-cover rounded-3xl " />
+                                      <img src={dataTour.images[6]} className="w-full h-full object-cover rounded-3xl "  alt="Main view of the tour location" loading="lazy"  />
                             )}
                         </div>
                         {/* <div className="w-[95%] h-[30%]  flex    gap-4 p-3 max-sm:flex-col border border-black "> */}
@@ -106,7 +106,7 @@ function ContainerTourInfo({dataTour,id}){
                               </div>
                               
                       </div>
-          </div>
+        </section>
         </>
     )
 }

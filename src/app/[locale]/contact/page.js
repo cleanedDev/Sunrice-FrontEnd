@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import { useForm } from "react-hook-form"
 import {enviarFormularioContact} from  "../../../api/fetch/routes"
 
 function Contact(){
 
     const t = useTranslations('formContact');
+    const locale = useLocale(); 
 
 const { register, handleSubmit, reset, watch, formState: { errors },} = useForm()
     
       const onSubmit = async  (data) => {
         reset()
-        await enviarFormularioContact(data)
+        await enviarFormularioContact(data, locale)
       }
 
     
