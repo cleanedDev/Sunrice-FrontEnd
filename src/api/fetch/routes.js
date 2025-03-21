@@ -14,13 +14,13 @@ const Toast = Swal.mixin({
 });
 
 
-export const enviarFormularioContact = async (data) => {
+export const enviarFormularioContact = async (data , idioma) => {
 
     try {
 
 
       let loadingToast = Swal.fire({
-        title: "Enviando mensaje...",
+        title: idioma === "es" ? "Enviando mensaje..." : "Sending message...",
         didOpen: () => {
           Swal.showLoading();
         },
@@ -41,10 +41,10 @@ export const enviarFormularioContact = async (data) => {
         if (response.ok) {
             const responseData = await response.json();
             Swal.fire({
-                title: "Listo!",
-                text: responseData.msg,
-                icon: "success",  
-              });
+              title: idioma === "es" ? "Tu mensaje fue enviado!" : "Messagge successfully sent!",
+              text: idioma === "es" ? "Te responderemos a la brevedad" : "We will get back to you shortly.",
+              icon: "success"
+                      })
             
         }else{
             const errorData = await response.json();
@@ -61,14 +61,14 @@ export const enviarFormularioContact = async (data) => {
     }
 };
 
-export const reservationTour = async (data) => {
+export const reservationTour = async (data,idioma) => {
 
   let loadingToast;
 
   try {
 
     loadingToast = Swal.fire({
-      title: "Enviando reserva...",
+      title: idioma === "es" ? "Creando reservación..." : "Creating reservation...",
       didOpen: () => {
         Swal.showLoading();
       },
@@ -90,20 +90,12 @@ export const reservationTour = async (data) => {
       if (response.ok) {
           const responseData = await response.json();
           
-          Swal.fire({
-            title: "Listo!",
-            text: responseData.msg,
-            icon: "success",
-        })
-        
-          
+        return { success: true, message: responseData.msg };
+            
       }else{
           const errorData = await response.json();
-              Swal.fire({
-                  title: "Oops!",
-                  text: errorData.msg,
-                  icon: "error",
-              });
+              
+              return { success: false, message: errorData.msg };
       }
 
   
@@ -112,14 +104,14 @@ export const reservationTour = async (data) => {
   }
 };
 
-export const reservationHotel = async (data) => {
+export const reservationHotel = async (data, idioma) => {
 
   let loadingToast;
 
   try {
 
     loadingToast = Swal.fire({
-      title: "Enviando reservacion...",
+      title: idioma === "es" ? "Creando reservación..." : "Creating reservation...",
       didOpen: () => {
         Swal.showLoading();
       },
@@ -127,6 +119,7 @@ export const reservationHotel = async (data) => {
       timerProgressBar: true,
       showConfirmButton: false,
     });
+
 
       const response = await fetch(`${apiUrl}/hospedaje/crearReservaHospedaje/`, {
           method: "POST", 
@@ -146,6 +139,7 @@ export const reservationHotel = async (data) => {
             text: responseData.msg,
             icon: "success",
         })
+        
         
           
       }else{
@@ -213,19 +207,10 @@ export const tourByID = async (id) => {
       // Convierte la respuesta a JSON
       const data = await response.json();
 
-      // const tours = data.data.filter(tour => 
-      //   tour._id !== id &&
-      //   tour.title !== "Sport Fishing OffShore" && 
-      //   tour.title !== "Sport Fishing InShore" && 
-      //   tour.title !== "Nado con Marlin"
-      // );
-
       const tours = data.data.filter(tour => 
         tour._id !== id 
       );
 
-
-      console.log(tours)
       return tours; // Devuelve los datos
       
 
@@ -251,8 +236,6 @@ export const tourByID = async (id) => {
         
       );
 
-
-      console.log(tours)
       return tours; // Devuelve los datos
       
 

@@ -24,22 +24,23 @@ function Section4({id}){
 
                             <div className=" h-6/6 rounded-tl-[40px] rounded-br-[40px] ">
                                 <img src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Hotel+Prados/HotelPrado+(12).jpg" alt="Espacio agradable en MagBay Hotel Prados"
-                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px]" />
+                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px] transition-transform duration-300 hover:scale-[1.05]"
+                                 />
                             </div>
 
                             <div className=" h-6/6 rounded-tl-[40px] rounded-br-[40px] ">
                                 <img src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Hotel+Prados/HotelPrado+(28).jpg" alt="Instalaciones de hospedajes en MagBay hotel prados"
-                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px]" />
+                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px] transition-transform duration-300 hover:scale-[1.05]" />
                             </div>
 
                             <div className=" h-6/6 rounded-tl-[40px] rounded-br-[40px] ">
                                 <img src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Hotel+Prados/HotelPrado+(15).jpg" alt="Hotel prados ubicado en MagBay"
-                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px]" />
+                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px] transition-transform duration-300 hover:scale-[1.05]" />
                             </div>
 
                             <div className=" h-6/6 rounded-tl-[40px] rounded-br-[40px] ">
                                 <img src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Hotel+Prados/HotelPrado+(36).jpg" alt="Habitaciones de Hotel prados en MagBay"
-                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px]" />
+                                className="w-full h-full object-cover rounded-tl-[40px] rounded-br-[40px] rounded-[10px] transition-transform duration-300 hover:scale-[1.05]" />
                             </div>
                             
                             
