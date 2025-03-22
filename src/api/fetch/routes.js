@@ -13,6 +13,47 @@ const Toast = Swal.mixin({
   },
 });
 
+export const toursReservation = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/tours/toursReservations/`);
+    
+    // Verifica si la respuesta es exitosa (status 200)
+    if (!response.ok) {
+      throw new Error('error al obtener los datos');
+    }
+
+    // Convierte la respuesta a JSON
+    const data = await response.json();
+
+    return data.data; // Devuelve los datos
+    
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+export const hotelReservation = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/hospedaje/ReservationsHotel/`);
+    
+    // Verifica si la respuesta es exitosa (status 200)
+    if (!response.ok) {
+      throw new Error('error al obtener los datos');
+    }
+
+    // Convierte la respuesta a JSON
+    const data = await response.json();
+
+    return data.data; // Devuelve los datos
+    
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+
 
 export const enviarFormularioContact = async (data , idioma) => {
 
@@ -243,6 +284,99 @@ export const tourByID = async (id) => {
       console.error('Error:', error);
     }
   };
+
+
+  export const login = async (data, locale) => {
+
+    try {
+      let loadingToast = Swal.fire({
+        title:"Iniciado Sesion",
+        didOpen: () => {
+          Swal.showLoading();
+        },
+        allowOutsideClick: false,
+      });
+
+        const response = await fetch(`${apiUrl}/admin/login`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json" // Especificamos que enviamos JSON
+            },
+            body: JSON.stringify(data) // Convertimos el objeto a JSON
+        });
+
+        if (response.ok) {
+
+            const data = await response.json();
+            localStorage.setItem("jwtToken", data.data);
+            window.location.href = `/${locale}/admin`;
+            Swal.close();
+            
+        }else{
+            const errorData = await response.json();
+                Swal.fire({
+                    title: "Oops!",
+                    text: errorData.msg,
+                    icon: "error",
+                });
+        }
+
+    
+    } catch (error) {
+        console.error("Error al hacer login:", error.message);
+    }
+};
+
+
+export const verifyCredentials = async (token, locale) => {
+
+  if(!token){
+    window.location.href = `/${locale}`;
+  }
+
+  try {
+    let loadingToast = Swal.fire({
+      title:"Revisando credenciales",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    const response = await fetch("http://localhost:3001/admin/verifyCredentials", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`  // Pasa el token en el header
+      }
+    });
+
+    Swal.close();
+
+      if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("jwtToken", token);
+          Swal.fire({
+            title: "Listo sesion iniciada",
+            text: data.msg,
+            icon: "success",
+        });
+                   
+      }else{
+          const errorData = await response.json();
+              Swal.fire({
+                  title: "Oops!",
+                  text: errorData.msg,
+                  icon: "error",
+              });
+              window.location.href = `/${locale}`;
+      }
+
+  
+  } catch (error) {
+      console.error("Error al hacer login:", error.message);
+  }
+};
   
   
  
