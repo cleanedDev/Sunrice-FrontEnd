@@ -343,7 +343,7 @@ export const verifyCredentials = async (token, locale) => {
       allowOutsideClick: false,
     });
 
-    const response = await fetch("http://localhost:3001/admin/verifyCredentials", {
+    const response = await fetch(`${apiUrl}/admin/verifyCredentials`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
