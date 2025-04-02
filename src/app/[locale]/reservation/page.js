@@ -2,7 +2,7 @@
 import React , { useRef } from "react";
 import FormReservationTour from "@/components/FormReservationTour/FormReservationTour";
 import {useSearchParams } from "next/navigation";
-import { useState , useEffect} from "react";
+
 
 import { useLocale,useTranslations } from "next-intl";
 
@@ -17,7 +17,7 @@ function Reservation(){
   const formRef = useRef();
   const tourName = searchParams.get("tourName");
   const t = useTranslations('tourReservation');
-  const [hospedaje, setHospedaje] = useState(false);
+  
   
 
   const onSubmit = async (data) => {
@@ -42,6 +42,8 @@ function Reservation(){
               }
           }
 
+          console.log(newData)
+
           Swal.fire({
             title: newData?.idioma === "es"? "¿Todo está correcto? Revisa los detalles antes de enviar." : "Is everything correct? Review the details before submitting.",
             showDenyButton: true,
@@ -55,20 +57,19 @@ function Reservation(){
               const res = await reservationTour(newData, locale);
   
               if (res.success) {
-                  // Mostrar la alerta de éxito y redirigir después de "OK"
+                
                   Swal.fire({
                     title: newData?.idioma === "es" ? "Reserva enviada con éxito!" : "Reservation successfully sent!",
                     text: newData?.idioma === "es" ? "Enviamos los detalles de reservación a tu correo electrónico" : "We have sent the reservation details to your email",
                     icon: "success"
                   }).then(() => {
-                      setHospedaje(false);
-                      // reset();
+                    
                       formRef.current.resetForm();
                       window.location.href = `/${locale}#section1`;  // Redirección después de confirmar
                   });
   
               } else {
-                  // Mostrar error si la reserva falla
+                 
                   Swal.fire({
                       title: "Error",
                       text: res.message,
@@ -91,7 +92,7 @@ function Reservation(){
              <img src="/bgFomR.jpg" className="w-full h-full object-cover rounded-2xl "></img>
              <div className="absolute top-0 left-0 w-full h-full bg-[#12142ab4] bg-opacity-50 z-10 rounded-2xl "></div>
 
-              <FormReservationTour onSubmit={onSubmit} t={t} tourName={tourName} hospedaje={hospedaje} setHospedaje={setHospedaje} ref={formRef}/>
+              <FormReservationTour onSubmit={onSubmit} t={t} tourName={tourName}  ref={formRef}/>
         
         </main>
         </>

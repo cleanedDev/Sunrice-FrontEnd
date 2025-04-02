@@ -1,37 +1,53 @@
-import React, { useImperativeHandle } from "react";
+import React, { useImperativeHandle, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form"
 
 
-function FormReservationTour({onSubmit, t, tourName, hospedaje, setHospedaje , ref}){
+function FormReservationTour({onSubmit, t, tourName, ref}){
     const today = new Date().toISOString().split("T")[0]; 
       const { setValue } = useForm();
+      const [hospedaje, setHospedaje] = useState(false);
       
-    const { register, handleSubmit, reset, watch, formState: { errors },} = useForm()
+    const { register, getValues, handleSubmit, reset, watch, formState: { errors },} = useForm({
+      defaultValues: {
+        tourElegido: tourName,
+      }
+    })
 
     useImperativeHandle(ref, () => ({
         resetForm: reset  
       }));
 
     const fechaInicio = watch("fechaInicio"); // Observar la fecha de inicio
+    const fechaFin = watch("fechaFin");
     const fechaInicioH = watch("fechaInicioH");
     const fechaFinH = watch("fechaFinH");
     const cantidadPersonasH = watch("cantidadPersonasH");
+
+
+    useEffect(() => {
+                console.log("La fecha de inicio es :" + fechaInicio);
+                console.log("La fecha de fin es :" + fechaFin);
+                console.log("La fecha de inicio de hotel es :" + fechaInicioH);
+                console.log("La fecha de fin de hotel es :" + fechaFinH);
+    
+            }, [fechaInicio, fechaInicioH]);
 
 
     const handleToggleHospedaje = () => {
         setHospedaje((prev) => {
             if (prev) {
                 // Si se desactiva, limpiar los valores
-                setValue(fechaInicioH, "");
-                setValue(fechaFinH, "");
-                setValue(cantidadPersonasH, "");
+                  setValue("fechaInicioH", "");
+                  setValue("fechaFinH", "");
+                  setValue("cantidadPersonasH", "");
     
                 reset({
+                  ...getValues(),  // Mantener todos los valores actuales
                   fechaInicioH: "",
                   fechaFinH: "",
                   cantidadPersonasH: "",
-              }, { keepValues: true });
+              });
     
                 console.log("Campos de hospedaje reseteados");
             }
@@ -45,7 +61,7 @@ function FormReservationTour({onSubmit, t, tourName, hospedaje, setHospedaje , r
         <form onSubmit={handleSubmit(onSubmit)} className="w-[90%] lg:w-[60%] mt-[10rem] md:mt-[7rem] absolute flex flex-col gap-4 mx-auto bg-[#0a1047a2] rounded-2xl   z-20">
                       <h1 className=" mx-auto text-white text-4xl font-semibold p-1 text-center">{t("title")}</h1>
                      
-                     <input className="p-2 bg-white rounded-2xl w-[85%] lg:w-[60%] mx-auto text-center" defaultValue={tourName} readOnly 
+                     <input className="p-2 bg-white rounded-2xl w-[85%] lg:w-[60%] mx-auto text-center"  readOnly 
                      {...register("tourElegido",{ required: true})}/>
                      {errors.tourElegido?.type === "required" && ( <p className="text-red-500" role="alert">{t("campo obligatorio")}</p>)}
                       

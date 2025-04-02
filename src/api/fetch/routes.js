@@ -377,7 +377,219 @@ export const verifyCredentials = async (token, locale) => {
       console.error("Error al hacer login:", error.message);
   }
 };
+
+
+
+
+export const deleteReservationTour = async ( id, token) => {
+
+  // Mostrar la alerta de confirmación
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  // Si el usuario confirma, continuar con la eliminación
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Eliminando reservacion",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/tours/deteleReservationTour/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        }
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Eliminado!', 'La reserva ha sido eliminada con éxito.', 'success');
+      console.log('Reserva eliminada con éxito:', data);
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al eliminar la reserva: ${error.message}`, 'error');
+      console.error('Error al eliminar:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+};
+
+
+export const deleteReservationHotel = async ( id, token) => {
+
+  // Mostrar la alerta de confirmación
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  // Si el usuario confirma, continuar con la eliminación
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Eliminando reservacion",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/hospedaje/deleteReservaHospedaje/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        }
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Eliminado!', 'La reserva ha sido eliminada con éxito.', 'success');
+      console.log('Reserva eliminada con éxito:', data);
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al eliminar la reserva: ${error.message}`, 'error');
+      console.error('Error al eliminar:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+};
   
+
+export const updateReservHotel = async (id, token, updateData) => {
+
+  // console.log(id, token, updateData)
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, actualizar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Actualizando reservacion",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/hospedaje/editarReservaHospedaje/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        },
+        body: JSON.stringify(updateData)
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.msg}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Actualizada!', 'La reserva ha sido actualizada con exito.', 'success');
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al actualizar la reserva: ${error.message}`, 'error');
+      console.error('Error al actualizar:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+};
+
+
+export const updateReservTour = async (id, token, updateData) => {
+
+  // console.log(id, token, updateData)
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, actualizar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Actualizando reservacion",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/tours/updateReservationTour/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        },
+        body: JSON.stringify(updateData)
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.msg}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Actualizada!', 'La reserva ha sido actualizada con exito.', 'success');
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al actualizar la reserva: ${error.message}`, 'error');
+      console.error('Error al actualizar:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+
+};
   
  
   
