@@ -15,7 +15,13 @@ function Admin(){
   const [allreservations, setAllReservations]= useState([])
   const[openDetail, setOpenDetail]= useState(false)
 
-  const token = localStorage.getItem("jwtToken");
+  const [token, setToken] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("jwtToken"); // Se ejecuta solo en el cliente
+    }
+    return null;
+  });
+  
 
   const verifyToken = async (token) => {
     if (token) {
@@ -75,7 +81,7 @@ function Admin(){
       }
 
       const handleUpdate = async (id, reservationType, token, data) =>{
-        console.log(data)
+        
 
         if (reservationType === 'hotel') {
 
@@ -111,7 +117,7 @@ function Admin(){
                 },
                 contactPref: data.contactMethod
           }
-
+          
           await updateReservTour(id, token, newData)
           await fetchData()
            
