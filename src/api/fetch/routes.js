@@ -590,6 +590,111 @@ export const updateReservTour = async (id, token, updateData) => {
   }
 
 };
+
+
+export const updateAnticipoTour = async (id, token, anticipo) => {
+
+  // console.log(id, token, updateData)
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, actualizar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Creando Link de pago espere...",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/tours/updateAnticipoTour/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        },
+        body: JSON.stringify({anticipo})
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.msg}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Listo!', 'Link creado con exito.', 'success');
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al crear el metodo de pago: ${error.message}`, 'error');
+      console.error('Error al crear:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+};
+
+
+export const updateAnticipoHotel = async (id, token, anticipo) => {
+
+  // console.log(id, token, updateData)
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡Esta acción no se puede deshacer!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, actualizar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
+    let loadingToast = Swal.fire({
+      title:"Creando Link de pago espere...",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
+
+    try {
+      const response = await fetch(`${apiUrl}/hospedaje/updateAnticipoHotel/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+        },
+        body: JSON.stringify({anticipo})
+      });
+
+      Swal.close();
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.msg}`);
+      }
+
+      const data = await response.json();
+      Swal.fire('Listo!', 'Link creado con exito.', 'success');
+      return data;
+
+    } catch (error) {
+      Swal.fire('Error', `Hubo un error al crear el metodo de pago: ${error.message}`, 'error');
+      console.error('Error al crear:', error.message);
+      throw error;
+    }
+  } else {
+    Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+  }
+};
+
   
  
   

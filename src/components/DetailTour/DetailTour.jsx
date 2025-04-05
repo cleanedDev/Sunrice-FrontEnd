@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { MdDelete } from "react-icons/md";
 import FormEditReservationTour from "../FormEditReservation/FormEditReservation";
+import { updateAnticipoTour, updateAnticipoHotel } from "@/api/fetch/routes";
 
 function DetailTour({selectedReserv, openDetail, setOpenDetail, handlerDelete, handleUpdate}){
   const token = localStorage.getItem("jwtToken");
@@ -13,12 +14,42 @@ function DetailTour({selectedReserv, openDetail, setOpenDetail, handlerDelete, h
     const[reservationType, setReservationType] =  useState('');
 
 
-    const handleAdvancePaymentUpdate = () => {
+    const handleAdvancePaymentUpdate = async  () => {
         if (!advancePayment || advancePayment <= 0) {
           alert('Please enter a valid payment amount');
           return;
         }
-        setPaymentLink('https://example.com/payment/123');
+        
+        
+        if (reservationType === 'tour') {
+            try {
+              const result = await updateAnticipoTour(selectedReserv._id, token, advancePayment);
+              console.log('Resultado de updateAnticipoTour:', result);
+          
+              if (result && result.paymentLink) {
+                setPaymentLink(result.paymentLink);
+                console.log('Link de pago:', result.paymentLink);
+              } else {
+                console.error('No se encontró la propiedad "Link" en la respuesta:', result);
+              }
+            } catch (error) {
+              console.error('Error al actualizar el anticipo:', error.message);
+            }
+        } else {
+          try {
+            const result = await updateAnticipoHotel(selectedReserv._id, token, advancePayment);
+            console.log('Resultado de updateAnticipoTour:', result);
+        
+            if (result && result.paymentLink) {
+              setPaymentLink(result.paymentLink);
+              console.log('Link de pago:', result.paymentLink);
+            } else {
+              console.error('No se encontró la propiedad "Link" en la respuesta:', result);
+            }
+          } catch (error) {
+            console.error('Error al actualizar el anticipo:', error.message);
+          }
+        }
         setIsEditingPayment(false);
       };
 

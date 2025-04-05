@@ -91,7 +91,7 @@ function FormEditReservationTour({openEdit, setOpenEdit, setOpenDetail, selected
         };
 
         const onSubmit = async (id, reservationType, token, data) => {
-
+          
           await handleUpdate(id, reservationType, token, data)
           setOpenEdit(false)
           setOpenDetail(false)
