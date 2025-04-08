@@ -11,7 +11,7 @@ function CardRoom({room, setSelectedRoom}){
         onClick={() => setSelectedRoom(room)}
     >
         <div className="h-64 overflow-hidden">
-            <img src={room.image} alt={room.name} className="w-full h-full object-cover" />
+            <img src={room.image2} alt={room.name} className="w-full h-full object-cover" />
         </div>
 
         <div className="p-6">

@@ -5,11 +5,16 @@ import { useForm } from "react-hook-form"
 import { FaParking , FaTimes } from 'react-icons/fa';
 import { useTranslations, useLocale } from "next-intl";
 import { reservationHotel } from "@/api/fetch/routes";
+import CarrucelToursImg from "@/components/Swiper/CarrucelToursImg";
+import Galeryhotel from "@/components/Galeryhotel/Galeryhotel";
 import Swal from "sweetalert2";
 import { MdOutlineDining, MdTerrain, MdKitchen } from 'react-icons/md';
-import {roomsEs, roomsEn} from "../../../../public/rooms/roomsInfo";
+import {roomsEs, roomsEn, instalations} from "../../../../public/rooms/roomsInfo";
+
 import CardRoom from "@/components/CardRoom/CardRoom";
 import DetailRoom from "@/components/DetailRoom/DetailRoom";
+
+
 
 
 function Hotel(){
@@ -18,6 +23,7 @@ function Hotel(){
   const tf = useTranslations('tourReservation');
   const locale = useLocale(); 
   const today = new Date().toISOString().split("T")[0]; // Fecha de hoy en formato YYYY-MM-DD
+  const[open, setOpen] = useState(false)
 
     const facilities = [
         { name: t('terraza'), icon: MdTerrain },
@@ -68,8 +74,8 @@ function Hotel(){
     return(
         <>
            
-    <main className="w-full min-h-screen relative mt-[6rem]  lg:max-w-screen-xl flex flex-col  mx-auto ">
-
+    <main className="w-full min-h-screen relative mt-[5.5rem]  lg:max-w-screen-xl flex flex-col  mx-auto ">
+         {open && ( <CarrucelToursImg images={instalations} open={open} setOpen={setOpen} />)}
             <header className="relative h-[70vh] overflow-hidden">
                 <img 
                     src="https://cleanedbucketdev.s3.us-east-2.amazonaws.com/Tours+imagenes/Hotel+Prados/HotelPrado+(15).jpg"
@@ -84,6 +90,9 @@ function Hotel(){
                 </div>
             </header>
 
+
+           <Galeryhotel instalations={instalations} open={open} setOpen={setOpen}/>
+            
             <section className="py-20 bg-[#F5EFEB]">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-hotel-darkBlue mb-12 text-center">{t('habitaciones')}</h2>

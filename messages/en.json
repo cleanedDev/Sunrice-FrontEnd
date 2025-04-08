@@ -16,7 +16,8 @@
         "Avistamiento de ballenas": "Whale Watching",
         "Avistamiento de FLora y Fauna": "Flora and Fauna Watching",
         "Safari al pacifico": "Pacific Safari"
-    }
+    },
+    "buttonExplorar":"Browse Tours"
 },
 "Section2": {
     "title": "Challenges and Thrills in the Ocean",
@@ -25,7 +26,8 @@
         "Nado con marlin": "Swim with Marlin",
         "Pesca InShore": "Inshore Fishing",
         "Pesca OffShore": "Offshore Fishing"
-    }
+    },
+    "button":"Learn more"
 },
 "Section3": {
     "title": "Commitment, Experience, and Accessibility",
@@ -40,7 +42,8 @@
 },
 "Section4": {
     "title": "Comfortable Lodging for Your Adventure",
-    "text": "Rest after a day of adventure or enjoy MagBay at your own pace. At Hotel Prados, we offer comfort and hospitality for a pleasant and relaxing stay."
+    "text": "Rest after a day of adventure or enjoy MagBay at your own pace. At Hotel Prados, we offer comfort and hospitality for a pleasant and relaxing stay.",
+    "buttonText":"Discover your accommodation"
 },
 "Section5": {
     "title": "Your Trip to MagBay, Hassle-Free",
@@ -82,8 +85,8 @@
         "duracion": "Duration",
         "reservar": "Book here",
         "incluye": "This Tour includes:"
-
-    }
+    },
+    "pasajeros":"Tour Travelers"
 },
 "tourReservation": {
     "title": "Your next adventure begins here",
@@ -121,10 +124,24 @@
     "comedor":"Dining Area",
     "estacionamiento":"Monitored Parking",
     "cocina":"Shared Kitchen",
-    "titleForm": "Your Perfect Getaway Starts Here!"
+    "titleForm": "Your Perfect Getaway Starts Here!"  
+    },
+    "paymentSuccess":{
+        "title":"Thank you for completing your payment.",
+        "mensaje":"Your payment was successfully processed. You will soon receive a notification with the updated status of your reservation.",
+        "regresar":"Back to Home",
+        "contact":"Need help?",
+        "url":"Contact our support team"
 
-    
-}
+    },
+    "paymentCanceled":{
+        "title":"Payment Canceled",
+        "mensaje":"We're sorry that you didn't complete the payment. If you have any questions or need assistance, please don't hesitate to contact our support team.",
+        "regresar":"Back to Homepage",
+        "contact":"Need help?",
+        "url":"Contact our support team"
+
+    }
 
 
 

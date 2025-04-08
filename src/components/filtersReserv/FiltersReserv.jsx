@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReservationCard from "../ReservationCard/ReservationCard";
 import DetailTour from "../DetailTour/DetailTour";
 
-function FiltersReserv({allreservations, handlerDelete, handleUpdate, openDetail, setOpenDetail}){
+function FiltersReserv({allreservations, handlerDelete, handleUpdate, openDetail, setOpenDetail, fetchData}){
 
   const [filterType, setFilterType] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
@@ -70,7 +70,7 @@ function FiltersReserv({allreservations, handlerDelete, handleUpdate, openDetail
     <div className="rounded-xl relative " >
 
     {openDetail && (
-      <DetailTour selectedReserv={selectedReserv} handlerDelete={handlerDelete} handleUpdate={handleUpdate}  openDetail={openDetail} setOpenDetail={setOpenDetail} />
+      <DetailTour selectedReserv={selectedReserv} setSelectedReserv={setSelectedReserv} handlerDelete={handlerDelete} handleUpdate={handleUpdate}  openDetail={openDetail} setOpenDetail={setOpenDetail} fetchData={fetchData} />
     )}
       
       

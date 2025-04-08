@@ -28,6 +28,15 @@ html {
   --swiper-pagination-bullet-vertical-gap: 100px;
 }
 
+
+  .swiper-button-next, .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    top: 50%;
+    margin-top: -22px; /* Para centrar verticalmente */
+    border-radius: 50%;
+  }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

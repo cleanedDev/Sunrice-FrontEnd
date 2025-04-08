@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 function ContainerTourInfo({dataTour,id}){
 
   const t = useTranslations('tourPage.containerToursInfo');
+  const tp = useTranslations('tourPage');
   const router = useRouter();
   const locale = useLocale(); 
 
@@ -29,9 +30,9 @@ function ContainerTourInfo({dataTour,id}){
                                       <img src={dataTour.images[6]} className="w-full h-full object-cover rounded-3xl "  alt="Main view of the tour location" loading="lazy"  />
                             )}
                         </div>
-                        {/* <div className="w-[95%] h-[30%]  flex    gap-4 p-3 max-sm:flex-col border border-black "> */}
+                      
                         <div className="w-[95%] h-[30%]  flex    gap-4 p-3 flex-col ">
-                              {/* <div className="w-full h-full flex flex-col sm:flex-row   gap-1"> */}
+                             
                               <div className="w-full h-full flex flex-col    gap-1">
                                     
                                     <div className="w-full lg:w-[85%] h-auto flex items-center gap-4 mx-auto bg-[#1f64be] rounded-2xl p-4 transition-all hover:shadow-lg hover:bg-[#1a56a3] ">
@@ -39,15 +40,22 @@ function ContainerTourInfo({dataTour,id}){
                                       <div className="flex flex-col justify-center items-center flex-1">
                                         <h3 className="text-lg font-semibold text-white mb-1">{t('temporada')}</h3>
                                         
-                                        {dataTour?.temporada?.length > 0 ? (
-                                            dataTour.temporada.map((temporada, index) => (
-                                              <span key={index} className="text-white/90 text-center">
-                                                {temporada}
-                                              </span>
-                                            ))
-                                          ) : (
-                                            <span className="text-white/90 text-center">No hay temporadas disponibles</span>
-                                          )}
+                                          <div className="space-y-2">
+                                                    {dataTour?.temporada?.length > 0 ? (
+                                                      dataTour.temporada.map((temporada, index) => (
+                                                        <div 
+                                                          key={index}
+                                                          className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white/90 text-sm font-medium transition-colors hover:bg-white/20"
+                                                        >
+                                                          {temporada}
+                                                        </div>
+                                                      ))
+                                                    ) : (
+                                                      <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white/90 text-sm">
+                                                        No hay temporadas disponibles
+                                                      </div>
+                                                    )}
+                                        </div>
                                       </div>                                   
                                     </div>
                                   
@@ -67,7 +75,7 @@ function ContainerTourInfo({dataTour,id}){
                                   <div className="w-full lg:w-[85%] h-auto flex items-center gap-4 mx-auto bg-[#1f64be] rounded-2xl p-4 transition-all hover:shadow-lg hover:bg-[#1a56a3]">
                                 <IoIosPeople  className="w-12 h-12 text-white flex-shrink-0"/>
                                 <div className="flex flex-col justify-center items-center flex-1">
-                                  <h3 className="text-lg font-semibold text-white mb-1">Passengers</h3>
+                                  <h3 className="text-lg font-semibold text-white mb-1">{tp("pasajeros")}</h3>
                                           {dataTour?.pasajeros?.map((pasajero, index) => (
                                           <span key={index} className="text-white/90 text-center">
                                             {pasajero}

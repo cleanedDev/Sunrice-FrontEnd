@@ -1,5 +1,5 @@
 'use client'
-import React , { useRef } from "react";
+import React , { useRef, useEffect } from "react";
 import FormReservationTour from "@/components/FormReservationTour/FormReservationTour";
 import {useSearchParams } from "next/navigation";
 
@@ -72,7 +72,7 @@ function Reservation(){
                  
                   Swal.fire({
                       title: "Error",
-                      text: res.message,
+                      text: res.msg,
                       icon: "error"
                   });
               }
@@ -83,6 +83,25 @@ function Reservation(){
           });
           
         }
+
+        useEffect(() => {
+          Swal.fire({
+            title: locale === "es" ? "¡Hola y bienvenido!" : "Hello and welcome!",
+            text: locale === "es"
+              ? "Nos encantaría que disfrutes de tu tour, pero recuerda que algunas actividades pueden depender de las condiciones del clima. Te sugerimos echar un vistazo al pronóstico del tiempo para el día que deseas reservar, ¡para que todo salga perfecto!"
+              : "We'd love for you to enjoy your tour, but please remember that some activities may depend on weather conditions. We recommend checking the weather forecast for the day you'd like to book, to make sure everything goes smoothly!",
+            icon: "info",
+            confirmButtonText: locale === "es" ? "¡Gracias por la recomendación!" : "Thanks for the recommendation!",
+            showCancelButton: true,
+            cancelButtonText: locale === "es" ? "Ver el clima" : "View weather",
+          }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.cancel) {
+              // Solo abrir si se presionó el botón "Ver el clima"
+              window.open("https://www.windy.com/24.790/-112.108?24.485,-111.807,10,m:emkac2r", "_blank");
+            }
+          });
+        }, []);
+        
 
 
     return(
