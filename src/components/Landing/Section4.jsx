@@ -45,7 +45,7 @@ function Section4({id}){
                             
                             
                         </div>
-                        <a className="p-2  w-10/12 sm:w-4/12 rounded-2xl text-center font-bold text-xl text-white duration-200 delay-200 shadow-sombra hover:shadow-sombra2 bg-blueHover hover:bg-blueHover/70  "  href={`/${locale}/hotel`} >Descubre tu hospedaje</a>
+                        <a className="p-2  w-10/12 sm:w-4/12 rounded-2xl text-center font-bold text-xl text-white duration-200 delay-200 shadow-sombra hover:shadow-sombra2 bg-blueHover hover:bg-blueHover/70  "  href={`/${locale}/hotel`} >{t("buttonText")}</a>
                     </div>
 
                 </div>

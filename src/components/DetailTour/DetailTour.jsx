@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import FormEditReservationTour from "../FormEditReservation/FormEditReservation";
 import { updateAnticipoTour, updateAnticipoHotel } from "@/api/fetch/routes";
 
-function DetailTour({selectedReserv, openDetail, setOpenDetail, handlerDelete, handleUpdate}){
+function DetailTour({selectedReserv, setSelectedReserv, openDetail, setOpenDetail, handlerDelete, handleUpdate, fetchData}){
   const token = localStorage.getItem("jwtToken");
 
    
@@ -14,44 +14,51 @@ function DetailTour({selectedReserv, openDetail, setOpenDetail, handlerDelete, h
     const[reservationType, setReservationType] =  useState('');
 
 
-    const handleAdvancePaymentUpdate = async  () => {
-        if (!advancePayment || advancePayment <= 0) {
-          alert('Please enter a valid payment amount');
-          return;
-        }
-        
-        
+    const handleAdvancePaymentUpdate = async () => {
+
+      if (!advancePayment || advancePayment <= 0) {
+        alert('Please enter a valid payment amount');
+        return;
+      }
+    
+      try {
+        let result;
         if (reservationType === 'tour') {
-            try {
-              const result = await updateAnticipoTour(selectedReserv._id, token, advancePayment);
-              console.log('Resultado de updateAnticipoTour:', result);
-          
-              if (result && result.paymentLink) {
-                setPaymentLink(result.paymentLink);
-                console.log('Link de pago:', result.paymentLink);
-              } else {
-                console.error('No se encontró la propiedad "Link" en la respuesta:', result);
-              }
-            } catch (error) {
-              console.error('Error al actualizar el anticipo:', error.message);
-            }
+          result = await updateAnticipoTour(selectedReserv._id, token, advancePayment);
+
+          console.log('Resultado de updateAnticipoTour:', result);
         } else {
-          try {
-            const result = await updateAnticipoHotel(selectedReserv._id, token, advancePayment);
-            console.log('Resultado de updateAnticipoTour:', result);
-        
-            if (result && result.paymentLink) {
-              setPaymentLink(result.paymentLink);
-              console.log('Link de pago:', result.paymentLink);
-            } else {
-              console.error('No se encontró la propiedad "Link" en la respuesta:', result);
-            }
-          } catch (error) {
-            console.error('Error al actualizar el anticipo:', error.message);
-          }
+          result = await updateAnticipoHotel(selectedReserv._id, token, advancePayment);
+          console.log('Resultado de updateAnticipoHotel:', result);
         }
-        setIsEditingPayment(false);
-      };
+    
+        // Verifica si la respuesta contiene el link de pago y los datos actualizados
+        if (result && result.paymentLink) {
+          setPaymentLink(result.paymentLink);
+          fetchData()
+
+          // ACTUALIZA EL SELECTEDRESERV CON LOS NUEVOS DATOS
+          setSelectedReserv(prev => ({
+            ...prev,
+            anticipo: advancePayment,
+            paymentLink: result.paymentLink, // si lo deseas mostrar también
+          }));
+    
+          
+    
+          setIsEditingPayment(false);
+        } else {
+          // Si no se recibe el link de pago, mostramos un error
+          alert("Hubo un problema al generar el link de pago. Inténtalo nuevamente.");
+          console.error("Error al generar el link de pago:", result);
+        }
+      } catch (error) {
+        // Si algo sale mal con la solicitud
+        alert('Error al actualizar el anticipo. Por favor, intenta nuevamente.');
+        console.error('Error al actualizar el anticipo:', error.message);
+      }
+    };
+    
 
       useEffect(() => {
         selectedReserv?.hasOwnProperty("tourElegido")? setReservationType('tour') : setReservationType('hotel');

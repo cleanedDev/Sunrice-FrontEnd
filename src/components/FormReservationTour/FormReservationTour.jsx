@@ -176,7 +176,7 @@ function FormReservationTour({onSubmit, t, tourName, ref}){
                         </div>
         
                         <div className="w-full md:w-[70%] lg:w-[50%]  flex gap-1 items-center justify-center bg-white p-1 rounded-2xl mx-auto   ">
-                          <input type="radio" value="email" id="email"
+                          <input type="radio" value="correo electronico" id="email"
                           {...register("contactMethod", { required: t('selecciona') })}/>
                           <label htmlFor="email">{t('CorreoOption')}</label><br/>
                         </div>

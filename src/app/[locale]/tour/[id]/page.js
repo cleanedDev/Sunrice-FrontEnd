@@ -26,7 +26,7 @@ function Tour(){
     const specialIds = ["67aa734c536fdf4dbe900fa0", "67aa947a536fdf4dbe900fa3", "67aa9536536fdf4dbe900fa4"];
 
 
-  
+  console.log(dataTour)
       
     useEffect(() => {
 

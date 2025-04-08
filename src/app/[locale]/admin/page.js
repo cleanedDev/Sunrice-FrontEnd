@@ -129,7 +129,7 @@ function Admin(){
     <>
     <main className="min-h-screen mt-[6rem] bg-gray-300 p-4 sm:p-8 max-sm:w-full">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Reservation Management</h1>
-        <FiltersReserv allreservations={allreservations} handlerDelete={handlerDelete} handleUpdate={handleUpdate} openDetail={openDetail} setOpenDetail={setOpenDetail}/>
+        <FiltersReserv allreservations={allreservations} handlerDelete={handlerDelete} handleUpdate={handleUpdate} openDetail={openDetail} setOpenDetail={setOpenDetail} fetchData={fetchData}/>
     </main>
     </>)
 }

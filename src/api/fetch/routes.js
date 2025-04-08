@@ -136,7 +136,7 @@ export const reservationTour = async (data,idioma) => {
       }else{
           const errorData = await response.json();
               
-              return { success: false, message: errorData.msg };
+              return { success: false, message: errorData.message };
       }
 
   
@@ -145,56 +145,61 @@ export const reservationTour = async (data,idioma) => {
   }
 };
 
+
+
 export const reservationHotel = async (data, idioma) => {
-
-  let loadingToast;
-
   try {
+      Swal.fire({
+          title: idioma === "es" ? "Creando reservación..." : "Creating reservation...",
+          didOpen: () => Swal.showLoading(),
+          allowOutsideClick: false,
+          timerProgressBar: true,
+          showConfirmButton: false,
+      });
 
-    loadingToast = Swal.fire({
-      title: idioma === "es" ? "Creando reservación..." : "Creating reservation...",
-      didOpen: () => {
-        Swal.showLoading();
-      },
-      allowOutsideClick: false, // Deshabilitar clic fuera del modal
-      timerProgressBar: true,
-      showConfirmButton: false,
-    });
-
-
-      const response = await fetch(`${apiUrl}/hospedaje/crearReservaHospedaje/`, {
-          method: "POST", 
+      const response = await fetch(`${apiUrl}/hospedaje/crearReservaHospedaje`, {
+          method: "POST",
           headers: {
-              "Content-Type": "application/json" // Especificamos que enviamos JSON
+              "Content-Type": "application/json"
           },
-          body: JSON.stringify(data) // Convertimos el objeto a JSON
+          body: JSON.stringify(data)
       });
 
       Swal.close();
 
       if (response.ok) {
           const responseData = await response.json();
-          
           Swal.fire({
-            title: "Listo!",
-            text: responseData.msg,
-            icon: "success",
-        })
-        
-        
-          
-      }else{
-          const errorData = await response.json();
-              Swal.fire({
-                  title: "Oops!",
-                  text: errorData.msg,
-                  icon: "error",
-              });
+              title: idioma === "es" ? "¡Listo!" : "Done!",
+              text: responseData.mensaje,
+              icon: "success",
+          });
+      } else {
+          const contentType = response.headers.get("content-type");
+          let errorMessage = idioma === "es" ? "Hubo un error al procesar tu reservación." : "There was an error processing your reservation.";
+
+          if (contentType && contentType.includes("application/json")) {
+              const errorData = await response.json();
+              errorMessage = errorData.mensaje || errorMessage;
+          } else {
+              const errorText = await response.text();
+              console.error("Respuesta no JSON:", errorText);
+          }
+
+          Swal.fire({
+              title: idioma === "es" ? "Oops!" : "Oops!",
+              text: errorMessage,
+              icon: "error",
+          });
       }
 
-  
   } catch (error) {
       console.error("Error al enviar la solicitud:", error.message);
+      Swal.fire({
+          title: idioma === "es" ? "Error" : "Error",
+          text: idioma === "es" ? "No se pudo completar la solicitud." : "Request failed.",
+          icon: "error",
+      });
   }
 };
 

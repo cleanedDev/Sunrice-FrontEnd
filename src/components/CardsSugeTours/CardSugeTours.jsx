@@ -2,10 +2,11 @@ import React from "react";
 
 
 
-function CardSugeTours({handleTourClick, tour, dataTour}){
+function CardSugeTours({handleTourClick, tour, dataTours}){
+
     return(
     <>
-                <div onClick={() => handleTourClick(tour)}  className={`bg-[#F5EFEB] w-[85%] ${dataTour?.length > 2 ? 'h-[90%]' : 'h-[80%]'} group relative bg-[#F5EFEB] rounded-xl overflow-hidden shadow-lg 
+                <div onClick={() => handleTourClick(tour)}  className={`bg-[#F5EFEB] w-[85%] ${dataTours?.length <= 2 ? 'h-[50%]' : 'h-[80%]'} group relative bg-[#F5EFEB] rounded-xl overflow-hidden shadow-lg 
                         transition-all duration-300 hover:scale-105 hover:shadow-2xl
                         cursor-pointer mx-auto`} aria-label={`Click to view details of ${tour.title} tour`} 
                         role="button"> 
@@ -13,7 +14,7 @@ function CardSugeTours({handleTourClick, tour, dataTour}){
                           <div className="flex items-center p-4 gap-4 h-full">
                               <div className="w-1/4 aspect-square overflow-hidden rounded-xl">
                                 <img
-                                  src={tour.images[3]}
+                                  src={tour.images[6]}
                                   loading="lazy"
                                   alt={`Image of the ${tour.title} tour`}
                                   className="w-full h-full object-cover transform group-hover:scale-110 

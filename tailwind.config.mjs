@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        'sombra': '0px 15px 0px 0px rgba(0, 0, 0, 0.1)', // Clase personalizada
-        'sombra2': '0px 15px 0px 0px rgba(0, 0, 0, 0.25)', // Clase personalizada
+        'sombra': '0px 15px 0px 0px rgba(0, 0, 0, 0.1)', 
+        'sombra2': '0px 15px 0px 0px rgba(0, 0, 0, 0.25)', 
       },
       
       height: {

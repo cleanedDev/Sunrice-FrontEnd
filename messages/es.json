@@ -16,7 +16,8 @@
             "Avistamiento de ballenas":"Avistamiento de ballenas",
             "Avistamiento de FLora y Fauna":"Avistamiento de FLora y Fauna",
             "Safari al pacifico":"Safari al pacifico"
-        }
+        },
+        "buttonExplorar":"Explorar Tour"
     },
     "Section2":{
         "title":"Retos y Emociones en el Océano",
@@ -25,7 +26,8 @@
             "Nado con marlin":"Nado con marlin",
             "Pesca InShore":"Pesca InShore",
             "Pesca OffShore":"Pesca OffShore"
-        }
+        },
+        "button":"Conocer más"
     },
     "Section3":{
         "title":"Compromiso, Experiencia y Accesibilidad",
@@ -40,7 +42,8 @@
     },
     "Section4":{
         "title":"Hospedaje Cómodo para tu Aventura",
-        "text":"Descansa después de un día de aventura o disfruta de Bahía Magdalena a tu ritmo. En Hotel Prados, te ofrecemos comodidad y hospitalidad para una estancia placentera y relajante."
+        "text":"Descansa después de un día de aventura o disfruta de Bahía Magdalena a tu ritmo. En Hotel Prados, te ofrecemos comodidad y hospitalidad para una estancia placentera y relajante.",
+        "buttonText":"Descubre tu hospedaje"
     },
     "Section5":{
         "title":"Tu viaje a MagBay, sin complicaciones",
@@ -82,8 +85,8 @@
             "duracion":"Duracion",
             "reservar":"Reservar aqui",
             "incluye":"Este Tour incluye:"
-
-        }
+        },
+         "pasajeros":"Viajeros del tour"
     },
     "tourReservation":{
         "title":"Tu próxima aventura comienza aquí",
@@ -124,8 +127,22 @@
     "cocina": "Cocina compartida",
 
     "titleForm":"¡Tu Escapada Perfecta Comienza Aquí!"
+    },
+    "paymentSuccess":{
+        "title":"Gracias por completar su pago.",
+        "mensaje":"Tu pago ha sido procesado con éxito. Pronto recibirás una notificación con la actualización del estado de tu reservación.",
+        "regresar":"Regresar a Inicio",
+        "contact":"¿Necesitas ayuda?",
+        "url":"Contactanos"
+    },
+    "paymentCanceled":{
+        "title":"Pago Cancelado",
+        "mensaje":"Lamentamos que no hayas completado el pago. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de soporte.",
+        "regresar":"Volver al inicio",
+        "contact":"Need help?",
+        "url":"Contact our support team"
 
-}
+    }
    
 
 
