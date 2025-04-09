@@ -25,10 +25,11 @@ function DetailTour({selectedReserv, setSelectedReserv, openDetail, setOpenDetai
         let result;
         if (reservationType === 'tour') {
           result = await updateAnticipoTour(selectedReserv._id, token, advancePayment);
-
+          if (!result) return;
           console.log('Resultado de updateAnticipoTour:', result);
         } else {
           result = await updateAnticipoHotel(selectedReserv._id, token, advancePayment);
+          if (!result) return;
           console.log('Resultado de updateAnticipoHotel:', result);
         }
     
@@ -58,6 +59,7 @@ function DetailTour({selectedReserv, setSelectedReserv, openDetail, setOpenDetai
         console.error('Error al actualizar el anticipo:', error.message);
       }
     };
+  
     
 
       useEffect(() => {
@@ -69,7 +71,7 @@ function DetailTour({selectedReserv, setSelectedReserv, openDetail, setOpenDetai
 
     return(
         <>
-        <div className=" absolute inset-0 bg-gray-400 bg-opacity-80 backdrop-blur-md w-full  ">
+        <div className=" absolute inset-0 bg-gray-400 bg-opacity-80 backdrop-blur-md w-full h-full ">
 
             {openEdit &&(
                 <FormEditReservationTour openEdit={openEdit} setOpenEdit={setOpenEdit} setOpenDetail={setOpenDetail} handleUpdate={handleUpdate} selectedReserv={selectedReserv}/>
@@ -77,9 +79,9 @@ function DetailTour({selectedReserv, setSelectedReserv, openDetail, setOpenDetai
             
       
 
-        <div className="min-h-screen bg-gray-100  sm:p-8 rounded-xl">
+        <div className=" bg-gray-100  sm:p-8 rounded-xl ">
       <div className="max-w-4xl mx-auto ">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6 ">
           <div className=" flex flex-col gap-4 md:flex-row md:justify-between items-center mb-6   ">
             <div className="flex items-center gap-4 ">
               <button
