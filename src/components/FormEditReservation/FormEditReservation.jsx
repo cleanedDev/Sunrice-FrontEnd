@@ -91,7 +91,7 @@ function FormEditReservationTour({openEdit, setOpenEdit, setOpenDetail, selected
         };
 
         const onSubmit = async (id, reservationType, token, data) => {
-          
+          console.log(data)
           await handleUpdate(id, reservationType, token, data)
           setOpenEdit(false)
           setOpenDetail(false)
@@ -167,7 +167,7 @@ function FormEditReservationTour({openEdit, setOpenEdit, setOpenDetail, selected
                                     </div>
                                       
                                     <div className=" w-full md:w-[70%] lg:w-[50%] flex flex-col mx-auto">
-                                      <input type="tel" className="w-full    rounded-2xl p-2 text-center  placeholder:italic" placeholder="numero celular cliente" defaultValue={selectedReserv.telefono} 
+                                      <input type="tel" className="w-full    rounded-2xl p-2 text-center  placeholder:italic" placeholder="numero celular cliente" max="10" defaultValue={selectedReserv.telefono} 
                                       {...register("telefono",{required:true, maxLength:10})}/> 
                                       {errors.telefono?.type === "required" && ( <p className="text-red-500 text-center" role="alert">este campo es obligatorio</p>)}
                                     </div>

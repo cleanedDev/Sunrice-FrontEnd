@@ -42,7 +42,7 @@ function Reservation(){
               }
           }
 
-          console.log(newData)
+          
 
           Swal.fire({
             title: newData?.idioma === "es"? "¿Todo está correcto? Revisa los detalles antes de enviar." : "Is everything correct? Review the details before submitting.",

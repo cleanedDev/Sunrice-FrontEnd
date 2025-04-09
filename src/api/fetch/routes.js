@@ -597,9 +597,59 @@ export const updateReservTour = async (id, token, updateData) => {
 };
 
 
-export const updateAnticipoTour = async (id, token, anticipo) => {
+// export const updateAnticipoTour = async (id, token, anticipo) => {
 
-  // console.log(id, token, updateData)
+//   // console.log(id, token, updateData)
+//   const result = await Swal.fire({
+//     title: '¿Estás seguro?',
+//     text: "¡Esta acción no se puede deshacer!",
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonText: 'Sí, actualizar',
+//     cancelButtonText: 'Cancelar'
+//   });
+
+//   if (result.isConfirmed) {
+//     let loadingToast = Swal.fire({
+//       title:"Creando Link de pago espere...",
+//       didOpen: () => {
+//         Swal.showLoading();
+//       },
+//       allowOutsideClick: false,
+//     });
+
+//     try {
+//       const response = await fetch(`${apiUrl}/tours/updateAnticipoTour/${id}`, {
+//         method: 'PUT',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${token}`  // Pasamos el token aquí
+//         },
+//         body: JSON.stringify({anticipo})
+//       });
+
+//       Swal.close();
+
+//       if (!response.ok) {
+//         throw new Error(`Error: ${response.status} - ${response.msg}`);
+//       }
+
+//       const data = await response.json();
+//       Swal.fire('Listo!', 'Link creado con exito.', 'success');
+//       return data;
+
+//     } catch (error) {
+//       Swal.fire('Error', `Hubo un error al crear el metodo de pago: ${error.message}`, 'error');
+//       console.error('Error al crear:', error.message);
+//       throw error;
+//     }
+//   } else {
+//     Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+//   }
+// };
+
+export const updateAnticipoTour = async (id, token, anticipo) => {
+  // Muestra un cuadro de confirmación
   const result = await Swal.fire({
     title: '¿Estás seguro?',
     text: "¡Esta acción no se puede deshacer!",
@@ -609,9 +659,10 @@ export const updateAnticipoTour = async (id, token, anticipo) => {
     cancelButtonText: 'Cancelar'
   });
 
+  // Solo proceder si el usuario confirma
   if (result.isConfirmed) {
     let loadingToast = Swal.fire({
-      title:"Creando Link de pago espere...",
+      title: "Creando Link de pago, espere...",
       didOpen: () => {
         Swal.showLoading();
       },
@@ -625,9 +676,10 @@ export const updateAnticipoTour = async (id, token, anticipo) => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`  // Pasamos el token aquí
         },
-        body: JSON.stringify({anticipo})
+        body: JSON.stringify({ anticipo })
       });
 
+      // Cerrar el toast de carga
       Swal.close();
 
       if (!response.ok) {
@@ -635,16 +687,21 @@ export const updateAnticipoTour = async (id, token, anticipo) => {
       }
 
       const data = await response.json();
-      Swal.fire('Listo!', 'Link creado con exito.', 'success');
+      Swal.fire('Listo!', 'Link creado con éxito.', 'success');
       return data;
 
     } catch (error) {
-      Swal.fire('Error', `Hubo un error al crear el metodo de pago: ${error.message}`, 'error');
+      // Si ocurre un error en el fetch
+      Swal.fire('Error', `Hubo un error al crear el método de pago: ${error.message}`, 'error');
       console.error('Error al crear:', error.message);
-      throw error;
+      throw error;  // Lanzamos el error para manejarlo en el bloque catch
     }
   } else {
+    // Si el usuario cancela la acción, mostramos el mensaje correspondiente
+   
     Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+    return null;
+      // Devolver null o simplemente salir sin hacer nada
   }
 };
 
