@@ -578,7 +578,9 @@ export const updateReservTour = async (id, token, updateData) => {
       Swal.close();
 
       if (!response.ok) {
-        throw new Error(`Error: ${response.status} - ${response.msg}`);
+        // throw new Error(`Error: ${response.status} - ${response.msg}`);
+        const errorData = await response.json(); // <- Aquí lees el body real
+        throw new Error(`Error ${response.status}: ${errorData.message || 'Error desconocido'}`);
       }
 
       const data = await response.json();
