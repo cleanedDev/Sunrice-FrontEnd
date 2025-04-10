@@ -107,7 +107,7 @@ function ContainerTourInfo({dataTour,id}){
                                   </ul>
                                 )}
                               </div>
-                              <div className="bg-[#1f64be]/80 rounded-2xl p-4"> 
+                              <div className="bg-[#1f64be]/80 rounded-2xl p-4 mb-3"> 
                                 {dataTour?.options &&(
                                   <p className="text-white text-center">{dataTour.options}</p>
                                 )}
