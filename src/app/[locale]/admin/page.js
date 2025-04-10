@@ -2,6 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useLocale} from 'next-intl';
+import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { verifyCredentials } from "@/api/fetch/routes";
 import { toursReservation, hotelReservation, deleteReservationTour, deleteReservationHotel, updateReservHotel, updateReservTour } from "@/api/fetch/routes";
@@ -12,6 +13,7 @@ import FiltersReserv from "@/components/filtersReserv/FiltersReserv";
 function Admin(){
 
   const locale = useLocale(); 
+  const router = useRouter();
   const [allreservations, setAllReservations]= useState([])
   const[openDetail, setOpenDetail]= useState(false)
 
@@ -125,10 +127,23 @@ function Admin(){
 
       }
 
+      const handleLogout = () => {
+        // Limpia tokens, sesión, etc.
+        localStorage.removeItem("jwtToken");
+        // Redirige
+        router.push(`/${locale}`);
+      };
+
     return(
     <>
     <main className="min-h-screen mt-[6rem] bg-gray-300 p-4 sm:p-8 max-sm:w-full">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Reservation Management</h1>
+      <div className=" flex flex-col my-2 md:flex-row justify-between items-center  ">
+        <h1 className="text-3xl font-bold text-gray-900 ">Reservaciones</h1>
+        <button  onClick={handleLogout} className="px-3 py-1 bg-blue-500 text-white rounded my-1">
+        🔓Log Out
+        </button>
+      </div>
+      {/* <h1 className="text-3xl font-bold text-gray-900 mb-8">Reservation Management</h1> */}
         <FiltersReserv allreservations={allreservations} handlerDelete={handlerDelete} handleUpdate={handleUpdate} openDetail={openDetail} setOpenDetail={setOpenDetail} fetchData={fetchData}/>
     </main>
     </>)

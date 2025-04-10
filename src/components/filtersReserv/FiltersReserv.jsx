@@ -68,7 +68,7 @@ function FiltersReserv({allreservations, handlerDelete, handleUpdate, openDetail
     
   
     {/* <div className="rounded-xl relative  min-h-screen border border-black " > */}
-    <div className={`rounded-xl relative ${openDetail ? 'min-h-[160vh]' : 'min-h-screen'}`} >
+    <div className={`rounded-xl relative ${openDetail ? 'min-h-[170vh]' : 'min-h-screen'}`} >
 
     {openDetail && (
       <DetailTour selectedReserv={selectedReserv} setSelectedReserv={setSelectedReserv} handlerDelete={handlerDelete} handleUpdate={handleUpdate}  openDetail={openDetail} setOpenDetail={setOpenDetail} fetchData={fetchData} />
