@@ -1,6 +1,6 @@
 "use client"
 import react from "react";
-
+import { GiSpermWhale } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { useLocale } from "next-intl";
@@ -26,14 +26,14 @@ function Tour(){
     const specialIds = ["67aa734c536fdf4dbe900fa0", "67aa947a536fdf4dbe900fa3", "67aa9536536fdf4dbe900fa4"];
 
 
-  console.log(dataTour)
+
       
     useEffect(() => {
 
     
         const fetchTourData = async () => {
           try {
-            const tourData = await tourByID(id);  // Asumiendo que tourByID es una función async
+            const tourData = await tourByID(id); 
             setDataTour(tourData); 
             setIdSelected(tourData._id);
             
@@ -131,6 +131,17 @@ function Tour(){
         setDataTour(selectedTour);
       };
 
+      if (!dataTour || Object.keys(dataTour).length === 0) {
+        return (
+          
+          <div className=" w-full h-screen flex justify-center items-center mx-auto ">
+            <div className="relative">
+                <div className="absolute inset-0 animate-ping rounded-full bg-blue-200 dark:bg-blue-900/50" />
+                  <img src="/LogoSunrise.png" className="w-25 h-20 text-blue-500 dark:text-blue-400 relative animate-bounce"></img>
+            </div>
+          </div>
+        );
+      }
     
       
     return(
@@ -138,7 +149,7 @@ function Tour(){
          <main className="w-full min-h-screen relative mt-[6rem]  lg:max-w-screen-xl  mx-auto flex flex-col justify-around gap-10 text-white  ">
             {open && ( <CarrucelToursImg images={dataTour.images} open={open} setOpen={setOpen} />)}
 
-            <h1 className=" w-auto lg:w-4/12 text-4xl font-bold text-blueText p-4 text-center  mx-auto ">{dataTour.title}</h1>
+            <h1 className=" w-auto lg:w-4/12 text-4xl font-bold text-blueText p-4 text-center  mx-auto mt-4 lg:mt-0 ">{dataTour.title}</h1>
               {dataTour?.images?.length > 0 && (
                 <GaleryTours  open={open} setOpen={setOpen} imagenes={dataTour.images}/>
               )}
