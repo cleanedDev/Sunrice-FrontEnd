@@ -137,7 +137,7 @@ function FormEditReservationTour({openEdit, setOpenEdit, setOpenDetail, selected
                                   <div className="w-[85%] lg:w-[60%] flex flex-col items-center mx-auto ">
                                     <label className="text-white font-semibold" htmlFor="personas" >pasajeros</label>
                                     <input id="personas" type="number" className="w-[50%] p-2 text-center rounded-2xl" defaultValue={selectedReserv.cantidadPersonas}
-                                    {...register("cantidadPersonas",{ required: true, min: 1, max: 6})}/> 
+                                    {...register("cantidadPersonas",{ required: true, min: 1})}/> 
                                     {errors.cantidadPersonas?.type === "required" && ( <p className="text-red-500" role="alert">este campo es obligatorio</p>)}
                                   </div>
                     
