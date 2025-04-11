@@ -167,7 +167,7 @@ function Hotel(){
                   <div className="w-[90%] lg:w-[70%] flex flex-col items-center mx-auto ">
                     <label className="text-white font-semibold" htmlFor="personas" >{tf('huespedes')}</label>
                     <input id="personas" type="number" className="w-[50%] p-2 text-center rounded-2xl"
-                    {...register("cantidadPersonas",{ required: true, min: 1, max: 6})}/> 
+                    {...register("cantidadPersonas",{ required: true, min: 1})}/> 
                     {errors.cantidadPersonas?.type === "required" && ( <p className="text-red-500" role="alert">{tf("campo obligatorio")}</p>)}
                   </div>
 
