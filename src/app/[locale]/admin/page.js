@@ -70,15 +70,27 @@ function Admin(){
       const handlerDelete = async (id, reservationType,  token,)=>{
         
         if (reservationType === 'tour') {
-          await deleteReservationTour(id, token)
-            const updatedData = allreservations.filter(reservation => reservation._id !== id);
-            setAllReservations(updatedData);  
-            setOpenDetail(false)
+            // await deleteReservationTour(id, token)
+            // const updatedData = allreservations.filter(reservation => reservation._id !== id);
+            // setAllReservations(updatedData);  
+            // setOpenDetail(false)
+            const wasDeleted = await deleteReservationTour(id, token);
+            if (wasDeleted) {
+              const updatedData = allreservations.filter(reservation => reservation._id !== id);
+              setAllReservations(updatedData);  
+              setOpenDetail(false);
+            }
         } else {
-          await deleteReservationHotel(id, token)
-            const updatedData = allreservations.filter(reservation => reservation._id !== id);
-            setAllReservations(updatedData);  
-            setOpenDetail(false)
+            // await deleteReservationHotel(id, token)
+            // const updatedData = allreservations.filter(reservation => reservation._id !== id);
+            // setAllReservations(updatedData);  
+            // setOpenDetail(false)
+            const wasDeleted = await deleteReservationHotel(id, token);
+              if (wasDeleted) {
+                const updatedData = allreservations.filter(reservation => reservation._id !== id);
+                setAllReservations(updatedData);  
+                setOpenDetail(false);
+              }
         }
       }
 
