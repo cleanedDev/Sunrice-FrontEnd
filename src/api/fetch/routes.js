@@ -435,6 +435,7 @@ export const deleteReservationTour = async ( id, token) => {
     }
   } else {
     Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+    return false; 
   }
 };
 
@@ -488,6 +489,7 @@ export const deleteReservationHotel = async ( id, token) => {
     }
   } else {
     Swal.fire('Cancelado', 'La acción ha sido cancelada', 'info');
+    return false; 
   }
 };
   
