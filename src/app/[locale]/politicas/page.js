@@ -15,7 +15,7 @@ function Politicas(){
     return(
         <>
         <section className=" my-[8rem] w-full md:w-[60%]  text-justify mx-auto  gap-2 flex flex-col justify-around p-2">
-            <h1 className="text-[2.5rem] font-bold text-blueText text-center">Lineamientos para Reservaciones</h1>
+            <h1 className="text-[2.5rem] font-bold text-blueText text-center">{t("title")}</h1>
             <ul className="flex flex-col gap-9">
                 <li className="flex flex-col gap-2  ">
                     <h2 className="text-[1.75rem] font-medium text-blueSubtitles text-center lg:text-justify">{t("titleP1")}</h2>

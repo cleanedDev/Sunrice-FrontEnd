@@ -144,6 +144,7 @@
 
     },
     "politicas":{
+        "title":"Lineamientos para Reservaciones",
         "titleP1":"No se realizan devoluciones.",
         "descripP1":"Todas las ventas son finales. Te recomendamos revisar cuidadosamente los detalles de tu reservación antes de completar tu pago.",
         "titleP2":"Cambios o modificaciones.",

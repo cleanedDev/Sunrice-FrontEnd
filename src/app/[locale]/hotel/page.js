@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { useForm } from "react-hook-form"
 import { FaParking , FaTimes } from 'react-icons/fa';
 import { useTranslations, useLocale } from "next-intl";
@@ -69,6 +69,19 @@ function Hotel(){
                }
              });
   }
+
+  useEffect(() => {
+    if (openForm) {
+      Swal.fire({
+        title: locale === "es" ? "¡Hola y bienvenido!" : "Hello and welcome!",
+        html: locale === "es"
+          ? `Antes de completar tu reserva, te invitamos a revisar nuestras <a href="https://www.magbayfishingtoursandwhales.com/es/politicas" target="_blank" style="color:#3085d6;">políticas de reservación</a> para conocer los términos, condiciones y detalles importantes de tu estancia.`
+          : `Before completing your booking, we invite you to review our <a href="https://www.magbayfishingtoursandwhales.com/en/politicas" target="_blank" style="color:#3085d6;">reservation policies</a> to understand the terms, conditions, and important details of your stay.`,
+        icon: "info",
+        confirmButtonText: locale === "es" ? "¡Entendido, gracias!" : "Got it, thanks!",
+      });
+    }
+  }, [openForm, locale]);
 
 
     return(
