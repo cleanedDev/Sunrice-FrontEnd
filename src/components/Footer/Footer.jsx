@@ -56,7 +56,7 @@ function Footer(){
                         </div>
                         
                     </div>
-                    <a className="text-white cursor-pointer" onClick={handleClick}>Politicas de reservacion</a>
+                    <a className="text-white cursor-pointer" onClick={handleClick}>{tr("politicas")}</a>
                    </div>
                    
                 </div>
