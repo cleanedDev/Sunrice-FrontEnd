@@ -140,8 +140,18 @@
         "regresar":"Back to Homepage",
         "contact":"Need help?",
         "url":"Contact our support team"
+    },
+    "politicas": {
+    "titleP1": "No Refunds.",
+    "descripP1": "All sales are final. We recommend carefully reviewing your reservation details before completing your payment.",
+    "titleP2": "Changes or Modifications.",
+    "descripP2": "The date or type of service is subject to availability and must be requested in advance. Rescheduling is not guaranteed.",
+    "titleP3": "No Show for Reserved Service.",
+    "descripP3": "If you do not show up on the day of the service without prior notice, the reservation will be considered used and will not be refundable or reschedulable.",
+    "titleP4": "Weather Conditions and Force Majeure.",
+    "descripP4": "The safety of our clients is a priority. If conditions prevent the service from taking place, we will do our best to reschedule it. If rescheduling is not possible, each case will be evaluated individually."
+}
 
-    }
 
 
 

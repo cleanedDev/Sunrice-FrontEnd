@@ -142,6 +142,16 @@
         "contact":"Need help?",
         "url":"Contact our support team"
 
+    },
+    "politicas":{
+        "titleP1":"No se realizan devoluciones.",
+        "descripP1":"Todas las ventas son finales. Te recomendamos revisar cuidadosamente los detalles de tu reservación antes de completar tu pago.",
+        "titleP2":"Cambios o modificaciones.",
+        "descripP2":"La fecha o tipo de servicio están sujetos a disponibilidad y deben solicitarse con anticipación. No se garantiza la posibilidad de reprogramar.",
+        "titleP3":"Falta de Asistencia al Servicio Reservado.",
+        "descripP3":"En caso de no presentarse el día del servicio sin previo aviso, la reservación se considerará como utilizada y no será reembolsable ni reprogramable.",
+        "titleP4":"Condiciones climáticas y causas de fuerza mayor.",
+        "descripP4":"La seguridad de nuestros clientes es prioridad. En caso de que las condiciones no permitan realizar el servicio, haremos lo posible por reprogramarlo. Si esto no es posible, se evaluará cada caso individualmente."
     }
    
 

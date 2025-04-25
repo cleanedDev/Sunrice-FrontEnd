@@ -5,9 +5,11 @@ import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 
 
 function Footer(){
@@ -16,6 +18,8 @@ function Footer(){
 
     const t = useTranslations('header');
     const tr = useTranslations('Section7.testimonios');
+    const router = useRouter();
+    const locale = useLocale(); 
 
     const handleScrollSection = (sectionId) => {
         const section = document.getElementById(sectionId);
@@ -24,13 +28,20 @@ function Footer(){
         }
       };
 
+      const handleClick = (id) => {  
+        // 
+        router.push(`${locale}/politicas`);
+       
+      };
+
+
     
     return(
         <>
         <footer className="bg-[#0A142F] w-full lg:h-[40vh] flex flex-col justify-around h-[48vh] max-sm:text-sm">
-            <div className="border-t border-b w-10/12 h-3/6 mx-auto flex justify-between items-center ">
+            <div className="border-t border-b w-10/12 h-[55%] mx-auto flex justify-between items-center  ">
                 <img src="/LogoSunrise.png" alt="" className="h-full hidden sm:block" />
-                <div className="w-9/12 lg:w-6/12 h-[90%]  max-sm:mx-auto max-sm:w-full ">
+                <div className="w-9/12 lg:w-6/12 h-[90%]  max-sm:mx-auto max-sm:w-full my-3 ">
                    <div className="w-auto h-full  flex flex-col gap-2   ">
                     <span className=" flex gap-2 text-white  items-center  "><IoMdPin  className=" w-[20px] h-[20px]"/><a href="https://maps.app.goo.gl/errxT1nBK5NYwF9Y6" target="_blank">Puerto Salina Cruz 23740 California, Mexico</a></span>
                     <div className="w-full h-full flex flex-col lg:flex-row gap-4  "> 
@@ -45,7 +56,9 @@ function Footer(){
                         </div>
                         
                     </div>
+                    <a className="text-white cursor-pointer" onClick={handleClick}>Politicas de reservacion</a>
                    </div>
+                   
                 </div>
             </div>
             <div className="flex items-center">
