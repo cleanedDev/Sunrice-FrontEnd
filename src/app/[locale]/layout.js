@@ -11,12 +11,16 @@ import Footer from "@/components/Footer/Footer";
 
 
 
+// export const metadata = {
+//   title: "Sunrise Adventure In Magbay",
+//   description: "Reserva tus tours en MagBay para una aventura única en el mar.",
+
+// };
+
 export const metadata = {
-  title: "Sunrise Adventure In Magbay",
-  description: "Reserva tus tours en MagBay para una aventura única en el mar.",
-
+  title: "MagBay Tours: Sport Fishing & Whale Watching | Sunrise Adventure",
+  description: "Explora MagBay con Sunrise Adventure: avistamiento de ballenas, pesca deportiva y aventuras inolvidables en Bahía Magdalena. ¡Reserva ahora tu experiencia en el mar!",
 };
-
 
 
 export default async function RootLayout({ children, params }) {
