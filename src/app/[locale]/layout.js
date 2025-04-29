@@ -8,17 +8,8 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 
-
-
-
-// export const metadata = {
-//   title: "Sunrise Adventure In Magbay",
-//   description: "Reserva tus tours en MagBay para una aventura única en el mar.",
-
-// };
-
 export const metadata = {
-  title: "MagBay Tours: Sport Fishing & Whale Watching | Sunrise Adventure",
+  title: "Mag Bay Tours: Sport Fishing & Whale Watching | Sunrise Adventure",
   description: "Explora MagBay con Sunrise Adventure: avistamiento de ballenas, pesca deportiva y aventuras inolvidables en Bahía Magdalena. ¡Reserva ahora tu experiencia en el mar!",
 };
 
@@ -52,9 +43,24 @@ export default async function RootLayout({ children, params }) {
             <meta name="twitter:image" content="/images/fishing-tours.jpg" />
             <meta name="twitter:card" content="summary_large_image" />
             
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Mag Bay Tours",
+              "url": "https://www.magbayfishingtoursandwhales.com",
+              "logo": "https://www.magbayfishingtoursandwhales.com/LS.ico",
+              "sameAs": [
+              "https://www.facebook.com/tu-pagina",
+              "https://www.instagram.com/tu-pagina"
+                  ]
+                })
+              }}
+            />
     
-            {/* <link rel="alternate" href="https://www.sunriseadventure.com/es" hreflang="es" />
-            <link rel="alternate" href="https://www.sunriseadventure.com/en" hreflang="en" /> */}
+           
       </Head>
 
         <NextIntlClientProvider messages={messages}>
