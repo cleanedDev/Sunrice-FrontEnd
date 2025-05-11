@@ -153,7 +153,7 @@ function Admin(){
         </div>
       }
 
-      <div className=" flex flex-col my-2 md:flex-row justify-between items-center border border-black ">
+      <div className=" flex flex-col my-2 md:flex-row justify-between items-center  ">
         <h1 className="text-3xl font-bold text-gray-900 ">Reservaciones</h1>
         <button onClick={()=>{setOpenCalc(!openCalc)}} className="px-3 py-1 bg-blue-500 text-white rounded my-1">Calculadora</button>
         <button  onClick={handleLogout} className="px-3 py-1 bg-blue-500 text-white rounded my-1">
