@@ -8,6 +8,7 @@ import { verifyCredentials } from "@/api/fetch/routes";
 import { toursReservation, hotelReservation, deleteReservationTour, deleteReservationHotel, updateReservHotel, updateReservTour } from "@/api/fetch/routes";
 
 import FiltersReserv from "@/components/filtersReserv/FiltersReserv";
+import Calculadora from "@/components/Calculadora/Calculadora";
 
 
 function Admin(){
@@ -16,6 +17,7 @@ function Admin(){
   const router = useRouter();
   const [allreservations, setAllReservations]= useState([])
   const[openDetail, setOpenDetail]= useState(false)
+  const[openCalc, setOpenCalc] = useState(false)
 
   const [token, setToken] = useState(() => {
     if (typeof window !== "undefined") {
@@ -70,10 +72,7 @@ function Admin(){
       const handlerDelete = async (id, reservationType,  token,)=>{
         
         if (reservationType === 'tour') {
-            // await deleteReservationTour(id, token)
-            // const updatedData = allreservations.filter(reservation => reservation._id !== id);
-            // setAllReservations(updatedData);  
-            // setOpenDetail(false)
+           
             const wasDeleted = await deleteReservationTour(id, token);
             if (wasDeleted) {
               const updatedData = allreservations.filter(reservation => reservation._id !== id);
@@ -81,10 +80,7 @@ function Admin(){
               setOpenDetail(false);
             }
         } else {
-            // await deleteReservationHotel(id, token)
-            // const updatedData = allreservations.filter(reservation => reservation._id !== id);
-            // setAllReservations(updatedData);  
-            // setOpenDetail(false)
+            
             const wasDeleted = await deleteReservationHotel(id, token);
               if (wasDeleted) {
                 const updatedData = allreservations.filter(reservation => reservation._id !== id);
@@ -149,16 +145,27 @@ function Admin(){
     return(
     <>
     <main className="min-h-screen mt-[6rem] bg-gray-300 p-4 sm:p-8 max-sm:w-full">
-      <div className=" flex flex-col my-2 md:flex-row justify-between items-center  ">
+
+      {openCalc && 
+
+        <div className=" fixed z-10 inset-0 flex items-center justify-center mt-10  mx-auto w-[90%] h-[70%] p-4 bg-slate-500">
+          <Calculadora openCalc={openCalc} setOpenCalc={setOpenCalc}/>
+        </div>
+      }
+
+      <div className=" flex flex-col my-2 md:flex-row justify-between items-center border border-black ">
         <h1 className="text-3xl font-bold text-gray-900 ">Reservaciones</h1>
+        <button onClick={()=>{setOpenCalc(!openCalc)}} className="px-3 py-1 bg-blue-500 text-white rounded my-1">Calculadora</button>
         <button  onClick={handleLogout} className="px-3 py-1 bg-blue-500 text-white rounded my-1">
         🔓Log Out
         </button>
       </div>
-      {/* <h1 className="text-3xl font-bold text-gray-900 mb-8">Reservation Management</h1> */}
+        
         <FiltersReserv allreservations={allreservations} handlerDelete={handlerDelete} handleUpdate={handleUpdate} openDetail={openDetail} setOpenDetail={setOpenDetail} fetchData={fetchData}/>
+        
     </main>
-    </>)
+    </>
+    )
 }
 
 export default Admin;
